@@ -33,7 +33,7 @@ The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart 
   s.preserve_paths = 'libPoyntlib.a'
   s.vendored_libraries  = 'libPoyntlib.a'
   s.library = 'PoyntLib'
-  # s.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/PoyntLib' }     
+  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/PoyntLib/**/*.h' }     
   s.pod_target_xcconfig = {
     'OTHER_LDFLAGS' => '$(inherited) -ObjC'
   }
