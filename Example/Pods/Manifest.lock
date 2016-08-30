@@ -1,16 +1,16 @@
 PODS:
-  - PoyntSDK (0.1.0)
+  - PoyntLib (0.1.0)
 
 DEPENDENCIES:
-  - PoyntSDK (from `../`)
+  - PoyntLib (from `../`)
 
 EXTERNAL SOURCES:
-  PoyntSDK:
+  PoyntLib:
     :path: ../
 
 SPEC CHECKSUMS:
-  PoyntSDK: c94c06b2714e893dc0d11ecd6c6aea597304e1b6
+  PoyntLib: 26fd0cee82413931d4044280962cee0308e6ffc8
 
-PODFILE CHECKSUM: 09e749706fcf9a3f4c7e33af60539ad01dc63f79
+PODFILE CHECKSUM: 1200adf96a995a8c062df0f967a3553ec73e00ac
 
 COCOAPODS: 1.0.1

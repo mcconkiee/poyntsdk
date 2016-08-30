@@ -9,20 +9,10 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PoyntSDK.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3A3DC32A4011C0F309C65A642BC90D41</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5F2E1FFFB41EC70F4706167E897BFF23</key>
+		<key>DB3531885D2BCB8CD17489B68935BEB4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

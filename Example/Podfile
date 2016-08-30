@@ -1,6 +1,6 @@
 use_frameworks!
 target 'PoyntSDK_Tests' do
-  pod 'PoyntSDK', :path => '../'
+  pod 'PoyntLib', :git => "https://github.com/mcconkiee/poyntsdk"
   
   
 end

@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## PoyntSDK
+## PoyntLib
 
 Copyright (c) 2016 Eric McConkie <eric@ericmcconkie.com>
 
