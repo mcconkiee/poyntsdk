@@ -22,7 +22,7 @@ pod "PoyntSDK"
 
 ## Author
 
-Eric McConkie, eric@poynt.com
+Eric McConkie, eric@ericmcconkie.com
 
 ## License
 

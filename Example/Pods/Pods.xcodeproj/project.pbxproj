@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		240E9DAC95C4BF57C1257474B92FA236 /* Pods-PoyntSDK_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD52E1EA51C644B6D6A6F6BE958CA18 /* Pods-PoyntSDK_Tests-dummy.m */; };
+		4073372A153AB76EBCFD9F9B8ED4C33A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		49CA480102B255D5F669E43DCB504259 /* PoyntSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 311C312E3F8B6645284A810ECE651987 /* PoyntSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94F875D1CCC101F70AD198EFB1D847F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		CB971076F25EB831391ED070565AD034 /* Pods-PoyntSDK_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B5F0A164F27BEED386E2C923AB21915 /* Pods-PoyntSDK_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED13EF5F0E6E755D48D7CE57B7E25AE7 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C864351D7E9BC8C65FD932C0BB0F038 /* ReplaceMe.m */; };
+		FE54B9A83C5E11F80CAFF4E166E6DD87 /* PoyntSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCADD5ED2D44A69CFF03A6D8D0AC1E04 /* PoyntSDK-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A8218E497921545AE79208946BC8722 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A3DC32A4011C0F309C65A642BC90D41;
+			remoteInfo = PoyntSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1DD52E1EA51C644B6D6A6F6BE958CA18 /* Pods-PoyntSDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PoyntSDK_Tests-dummy.m"; sourceTree = "<group>"; };
+		29737B6D5AFD8B61B5F68F71FE634FFB /* Pods-PoyntSDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PoyntSDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2A2FFBF382410CA158442681C9D1863F /* Pods-PoyntSDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PoyntSDK_Tests.modulemap"; sourceTree = "<group>"; };
+		2B5F0A164F27BEED386E2C923AB21915 /* Pods-PoyntSDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PoyntSDK_Tests-umbrella.h"; sourceTree = "<group>"; };
+		311C312E3F8B6645284A810ECE651987 /* PoyntSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoyntSDK-umbrella.h"; sourceTree = "<group>"; };
+		319F618E24EED33448F323DA27D1DEBA /* Pods_PoyntSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoyntSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		605675A369C60CC5338A0AA20ACA6404 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C864351D7E9BC8C65FD932C0BB0F038 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
+		6D81905F242D2FDEBA09940E60A0EEEE /* Pods-PoyntSDK_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PoyntSDK_Tests-resources.sh"; sourceTree = "<group>"; };
+		86E5B56971A42A7E6E62A8CCF504CA68 /* PoyntSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoyntSDK-prefix.pch"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96A06553B905D257957926C8CA9DFEA8 /* PoyntSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PoyntSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		985C09491EADD7ED07CA264B923D7B64 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0DB41BB1570AF6EBAB82C8386839FEC /* Pods-PoyntSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoyntSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C7AE90D1BC9D19618F9AEF6703D39527 /* PoyntSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PoyntSDK.xcconfig; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D1BE440E8B15FA3E09B5603254F8EC07 /* PoyntSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PoyntSDK.modulemap; sourceTree = "<group>"; };
+		DCADD5ED2D44A69CFF03A6D8D0AC1E04 /* PoyntSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PoyntSDK-dummy.m"; sourceTree = "<group>"; };
+		E38809933B1B15420FA4CD47E5DFEF48 /* Pods-PoyntSDK_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PoyntSDK_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E805BFB745FFDA3344F31FB09222F9DB /* Pods-PoyntSDK_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PoyntSDK_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		F46DC4783BD8DF068169B9B2F0CF46D8 /* Pods-PoyntSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoyntSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C5ADD57CE1B3F68A5A62AAB5B18EAEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4073372A153AB76EBCFD9F9B8ED4C33A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4FA2F56DEADF4987D6B02EF3B60A44D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94F875D1CCC101F70AD198EFB1D847F5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		122C8B7425D38B0E8456533840396C09 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6C864351D7E9BC8C65FD932C0BB0F038 /* ReplaceMe.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		154AB803DABAFFD0A0D988692A00C3D6 /* PoyntSDK */ = {
+			isa = PBXGroup;
+			children = (
+				D6CA8BA27FECE7DBBC36B8FEE0B2393C /* PoyntSDK */,
+				C9B160CD3406F68CC417946DBBD2F441 /* Support Files */,
+			);
+			name = PoyntSDK;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		3E165E540272EEBDE915ABFC8343D174 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				94F13520DC011CFDE3949F6FD7D0A6B4 /* Pods-PoyntSDK_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				96FF4CA15A0E946A886EC677953886FA /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				FC8EE6BEFF08B0474B15F4578A15E4A5 /* Products */,
+				3E165E540272EEBDE915ABFC8343D174 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		94F13520DC011CFDE3949F6FD7D0A6B4 /* Pods-PoyntSDK_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				985C09491EADD7ED07CA264B923D7B64 /* Info.plist */,
+				2A2FFBF382410CA158442681C9D1863F /* Pods-PoyntSDK_Tests.modulemap */,
+				29737B6D5AFD8B61B5F68F71FE634FFB /* Pods-PoyntSDK_Tests-acknowledgements.markdown */,
+				E38809933B1B15420FA4CD47E5DFEF48 /* Pods-PoyntSDK_Tests-acknowledgements.plist */,
+				1DD52E1EA51C644B6D6A6F6BE958CA18 /* Pods-PoyntSDK_Tests-dummy.m */,
+				E805BFB745FFDA3344F31FB09222F9DB /* Pods-PoyntSDK_Tests-frameworks.sh */,
+				6D81905F242D2FDEBA09940E60A0EEEE /* Pods-PoyntSDK_Tests-resources.sh */,
+				2B5F0A164F27BEED386E2C923AB21915 /* Pods-PoyntSDK_Tests-umbrella.h */,
+				F46DC4783BD8DF068169B9B2F0CF46D8 /* Pods-PoyntSDK_Tests.debug.xcconfig */,
+				B0DB41BB1570AF6EBAB82C8386839FEC /* Pods-PoyntSDK_Tests.release.xcconfig */,
+			);
+			name = "Pods-PoyntSDK_Tests";
+			path = "Target Support Files/Pods-PoyntSDK_Tests";
+			sourceTree = "<group>";
+		};
+		96FF4CA15A0E946A886EC677953886FA /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				154AB803DABAFFD0A0D988692A00C3D6 /* PoyntSDK */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9B160CD3406F68CC417946DBBD2F441 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				605675A369C60CC5338A0AA20ACA6404 /* Info.plist */,
+				D1BE440E8B15FA3E09B5603254F8EC07 /* PoyntSDK.modulemap */,
+				C7AE90D1BC9D19618F9AEF6703D39527 /* PoyntSDK.xcconfig */,
+				DCADD5ED2D44A69CFF03A6D8D0AC1E04 /* PoyntSDK-dummy.m */,
+				86E5B56971A42A7E6E62A8CCF504CA68 /* PoyntSDK-prefix.pch */,
+				311C312E3F8B6645284A810ECE651987 /* PoyntSDK-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/PoyntSDK";
+			sourceTree = "<group>";
+		};
+		D6CA8BA27FECE7DBBC36B8FEE0B2393C /* PoyntSDK */ = {
+			isa = PBXGroup;
+			children = (
+				122C8B7425D38B0E8456533840396C09 /* Classes */,
+			);
+			path = PoyntSDK;
+			sourceTree = "<group>";
+		};
+		FC8EE6BEFF08B0474B15F4578A15E4A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				319F618E24EED33448F323DA27D1DEBA /* Pods_PoyntSDK_Tests.framework */,
+				96A06553B905D257957926C8CA9DFEA8 /* PoyntSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A046A14F70BE2DFAC501135591644CEC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49CA480102B255D5F669E43DCB504259 /* PoyntSDK-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0C46C1A3FEC1C849247390248F393AC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB971076F25EB831391ED070565AD034 /* Pods-PoyntSDK_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3A3DC32A4011C0F309C65A642BC90D41 /* PoyntSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 515158B0B88581986DFED4429299EE57 /* Build configuration list for PBXNativeTarget "PoyntSDK" */;
+			buildPhases = (
+				8D777E0E029C4F0EFB06DE81F2F73F5C /* Sources */,
+				5C5ADD57CE1B3F68A5A62AAB5B18EAEF /* Frameworks */,
+				A046A14F70BE2DFAC501135591644CEC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PoyntSDK;
+			productName = PoyntSDK;
+			productReference = 96A06553B905D257957926C8CA9DFEA8 /* PoyntSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5F2E1FFFB41EC70F4706167E897BFF23 /* Pods-PoyntSDK_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4C377E422A9BC870B07BD95AC3DEA2F /* Build configuration list for PBXNativeTarget "Pods-PoyntSDK_Tests" */;
+			buildPhases = (
+				A96AC7F2A5A9BDF98811998B3046AF16 /* Sources */,
+				D4FA2F56DEADF4987D6B02EF3B60A44D /* Frameworks */,
+				D0C46C1A3FEC1C849247390248F393AC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				31E1C95532AE5064B453488CFEFAE65A /* PBXTargetDependency */,
+			);
+			name = "Pods-PoyntSDK_Tests";
+			productName = "Pods-PoyntSDK_Tests";
+			productReference = 319F618E24EED33448F323DA27D1DEBA /* Pods_PoyntSDK_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = FC8EE6BEFF08B0474B15F4578A15E4A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F2E1FFFB41EC70F4706167E897BFF23 /* Pods-PoyntSDK_Tests */,
+				3A3DC32A4011C0F309C65A642BC90D41 /* PoyntSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D777E0E029C4F0EFB06DE81F2F73F5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE54B9A83C5E11F80CAFF4E166E6DD87 /* PoyntSDK-dummy.m in Sources */,
+				ED13EF5F0E6E755D48D7CE57B7E25AE7 /* ReplaceMe.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A96AC7F2A5A9BDF98811998B3046AF16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240E9DAC95C4BF57C1257474B92FA236 /* Pods-PoyntSDK_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31E1C95532AE5064B453488CFEFAE65A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PoyntSDK;
+			target = 3A3DC32A4011C0F309C65A642BC90D41 /* PoyntSDK */;
+			targetProxy = 1A8218E497921545AE79208946BC8722 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E146F2BD76E06EC76D78977FDBF8EEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7AE90D1BC9D19618F9AEF6703D39527 /* PoyntSDK.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PoyntSDK/PoyntSDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoyntSDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoyntSDK/PoyntSDK.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PoyntSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		464C860269C465F43707FEC4F198B8AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0DB41BB1570AF6EBAB82C8386839FEC /* Pods-PoyntSDK_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PoyntSDK_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PoyntSDK_Tests/Pods-PoyntSDK_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PoyntSDK_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9DA80C9509EDBF77D5D5D00C6A86F9E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F46DC4783BD8DF068169B9B2F0CF46D8 /* Pods-PoyntSDK_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PoyntSDK_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PoyntSDK_Tests/Pods-PoyntSDK_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PoyntSDK_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C2E911A91818B2D58072916164A87E5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7AE90D1BC9D19618F9AEF6703D39527 /* PoyntSDK.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PoyntSDK/PoyntSDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PoyntSDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PoyntSDK/PoyntSDK.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PoyntSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3E3D092A3FF7311A98E44BBA36FFD12 /* Debug */,
+				0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		515158B0B88581986DFED4429299EE57 /* Build configuration list for PBXNativeTarget "PoyntSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2E911A91818B2D58072916164A87E5D /* Debug */,
+				1E146F2BD76E06EC76D78977FDBF8EEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4C377E422A9BC870B07BD95AC3DEA2F /* Build configuration list for PBXNativeTarget "Pods-PoyntSDK_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DA80C9509EDBF77D5D5D00C6A86F9E8 /* Debug */,
+				464C860269C465F43707FEC4F198B8AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
