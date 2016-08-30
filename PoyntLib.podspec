@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoyntLib'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart Terminal.'
 
 # This description is used to generate tags and improve search results.
@@ -33,7 +33,7 @@ The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart 
   s.preserve_paths = 'libPoyntlib.a'
   s.vendored_libraries  = 'libPoyntlib.a'
   s.library = 'PoyntLib'
-  s.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/PoyntLib' }     
+  # s.xcconfig = { 'LIBRARY_SEARCH_PATHS' => '$(PODS_ROOT)/PoyntLib' }     
   s.pod_target_xcconfig = {
     'OTHER_LDFLAGS' => '$(inherited) -ObjC'
   }
