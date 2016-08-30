@@ -28,7 +28,7 @@ The PoyntSDK allows iOS clients to connect and communicate with the Poynt Smart 
   s.module_name           = "PoyntSDK"
 
   s.ios.deployment_target   = '8.0'
-  s.xcconfig            = { 'LIBRARY_SEARCH_PATHS' => "$(SRCROOT)/Pods/PoyntSDK/"
+  s.xcconfig            = { 'LIBRARY_SEARCH_PATHS' => "$(SRCROOT)/Pods/**/"}
   s.source_files        = 'libraries/PoyntSDK/**/*.h'  
   s.public_header_files = 'libraries/PoyntSDK/**/*.h'  
   s.preserve_paths      = 'libraries/PoyntSDK/libPoyntlib.a'
