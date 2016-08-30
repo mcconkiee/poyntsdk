@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoyntSDK'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'The PoyntSDK allows iOS clients to connect and communicate with the Poynt Smart Terminal.'
 
 # This description is used to generate tags and improve search results.
@@ -28,6 +28,7 @@ The PoyntSDK allows iOS clients to connect and communicate with the Poynt Smart 
   s.module_name           = "PoyntSDK"
 
   s.ios.deployment_target   = '8.0'
+  s.xcconfig            = { 'LIBRARY_SEARCH_PATHS' => "$(SRCROOT)/Pods/PoyntSDK/"
   s.source_files        = 'libraries/PoyntSDK/**/*.h'  
   s.public_header_files = 'libraries/PoyntSDK/**/*.h'  
   s.preserve_paths      = 'libraries/PoyntSDK/libPoyntlib.a'
