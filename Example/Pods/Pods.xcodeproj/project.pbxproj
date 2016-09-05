@@ -13,37 +13,37 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02E2CD33B762C470C1F22B2D37DEEE55 /* PoyntTransactionObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntTransactionObject.h; path = include/PoyntLib/PoyntTransactionObject.h; sourceTree = "<group>"; };
-		13D0FE56AD6B22D004C5BDBE91C3B668 /* PoyntTransactionAmounts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntTransactionAmounts.h; path = include/PoyntLib/PoyntTransactionAmounts.h; sourceTree = "<group>"; };
-		203BE8955BA199A04FE9A91BE593770C /* NSArray+Serialized.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Serialized.h"; path = "include/PoyntLib/NSArray+Serialized.h"; sourceTree = "<group>"; };
+		0193FF2973FF0A63C3F2A3E19237C153 /* PoyntOrderItemObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntOrderItemObject.h; sourceTree = "<group>"; };
+		0536730262F4E8858C222A659F2B04AA /* PoyntOrderItemTax.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntOrderItemTax.h; sourceTree = "<group>"; };
+		0877E4F1DF7580575C2B009DA6D6A209 /* PoyntDebug.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntDebug.h; sourceTree = "<group>"; };
+		0AACAB33FC80DD62383FFDB795714821 /* PoyntTerminalDiscover.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntTerminalDiscover.h; sourceTree = "<group>"; };
+		0D7C7CF7EA6474497B3E1B38B52530BC /* PoyntTransactionObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntTransactionObject.h; sourceTree = "<group>"; };
+		0E5BE22E882812D4406914DE31C7A598 /* PoyntPaymentAmountObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntPaymentAmountObject.h; sourceTree = "<group>"; };
+		1FA4B502256F8741D20E2110F6137585 /* PoyntPaymentObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntPaymentObject.h; sourceTree = "<group>"; };
 		2E17B077103350B037B1A012F4D9CFF4 /* Pods-PoyntSDKExampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoyntSDKExampleApp.release.xcconfig"; sourceTree = "<group>"; };
-		34A720B1B259E6B38CFAB6837AA138E1 /* PoyntOrderObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntOrderObject.h; path = include/PoyntLib/PoyntOrderObject.h; sourceTree = "<group>"; };
 		3511507917D492A1BDB32B30DB6EF025 /* Pods-PoyntSDKExampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PoyntSDKExampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		3661FBE03A0EC7A2C2F2C25EEFF65A74 /* Pods_PoyntSDKExampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoyntSDKExampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3ACD95E88901CD1756D169AD7052DCA7 /* PoyntSerializedObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntSerializedObject.h; path = include/PoyntLib/PoyntSerializedObject.h; sourceTree = "<group>"; };
+		3952B901F78E7BAB95C79341BB9364A8 /* PoyntTransactionResponseObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntTransactionResponseObject.h; sourceTree = "<group>"; };
 		3C0AEB5F0C3217693B37C87F40AE1149 /* Pods-PoyntSDKExampleApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PoyntSDKExampleApp.modulemap"; sourceTree = "<group>"; };
-		3FDD914007CB29288DADBF2197E96CC9 /* PoyntTransaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntTransaction.h; path = include/PoyntLib/PoyntTransaction.h; sourceTree = "<group>"; };
 		533944C6C551DD668383EBB1BB7E4E4E /* Pods-PoyntSDKExampleApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PoyntSDKExampleApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		54D8D789D357B70D22FCE3412864689E /* PoyntPaymentAmountObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntPaymentAmountObject.h; path = include/PoyntLib/PoyntPaymentAmountObject.h; sourceTree = "<group>"; };
-		5C6C62462120DFE4206FED06360A7660 /* PoyntLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntLib.h; path = include/PoyntLib/PoyntLib.h; sourceTree = "<group>"; };
-		61BF435FAADA218F21CBD860849E3415 /* PoyntOrderItemObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntOrderItemObject.h; path = include/PoyntLib/PoyntOrderItemObject.h; sourceTree = "<group>"; };
-		7148DDC5CCCC2B1C5EF0922A374CA3C4 /* PoyntOrderItemTax.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntOrderItemTax.h; path = include/PoyntLib/PoyntOrderItemTax.h; sourceTree = "<group>"; };
-		7D28E5200D7D9C61A509ADA03C42D851 /* PoyntTerminal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntTerminal.h; path = include/PoyntLib/PoyntTerminal.h; sourceTree = "<group>"; };
+		5855472BA7660CE2828234D88F95B2CB /* PoyntOrderObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntOrderObject.h; sourceTree = "<group>"; };
+		76FD6064AE54810C0AD318856B64E0C8 /* NSArray+Serialized.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSArray+Serialized.h"; sourceTree = "<group>"; };
+		89D90C88DEED5DC32F0A1E2DD08F8705 /* PoyntSerializedObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntSerializedObject.h; sourceTree = "<group>"; };
 		8D2AD214A14CEF838884D725E88565D0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		961D719B2C4920C44B27812DC85D6197 /* Pods-PoyntSDKExampleApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PoyntSDKExampleApp-frameworks.sh"; sourceTree = "<group>"; };
-		985E34A6F50631D13E61E6FE14F7AD88 /* PoyntDiscountObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntDiscountObject.h; path = include/PoyntLib/PoyntDiscountObject.h; sourceTree = "<group>"; };
 		9966CA65629023E78DED7FBDE1DD217C /* Pods-PoyntSDKExampleApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PoyntSDKExampleApp-resources.sh"; sourceTree = "<group>"; };
-		A8F9944429B9E701C90285FE70928D00 /* libPoyntLib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libPoyntLib.a; sourceTree = "<group>"; };
-		B1793218ACDACD30E9CF2E4981302F93 /* PoyntPaymentObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntPaymentObject.h; path = include/PoyntLib/PoyntPaymentObject.h; sourceTree = "<group>"; };
-		BD53BC5781FDBEBD10FFE7C4FEE7A48D /* PoyntDebug.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntDebug.h; path = include/PoyntLib/PoyntDebug.h; sourceTree = "<group>"; };
+		9FA5DC078B7B87A0C006F5405A629B53 /* PoyntLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntLib.h; sourceTree = "<group>"; };
+		9FBAFBC64031DBECDCF8FD6BD09AB908 /* PoyntTransaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntTransaction.h; sourceTree = "<group>"; };
+		B150143729BDA36B2E1B32DD14CF08AE /* PoyntTerminal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntTerminal.h; sourceTree = "<group>"; };
 		BFC3C43820DEC8DAF43EFA99CDA06AD9 /* Pods-PoyntSDKExampleApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PoyntSDKExampleApp-umbrella.h"; sourceTree = "<group>"; };
 		C1ED7962D976925DA8FFE3E0BAAC5866 /* Pods-PoyntSDKExampleApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PoyntSDKExampleApp-dummy.m"; sourceTree = "<group>"; };
+		C9CEDA8B1146233971A0321E32EDCE64 /* PoyntTransactionAmounts.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntTransactionAmounts.h; sourceTree = "<group>"; };
+		C9F1A79FBD1C0DF63956143ED005999B /* PoyntPOSConnectionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntPOSConnectionManager.h; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D827CF268AB6885D68E5B949ACA83F84 /* PoyntPOSConnectionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntPOSConnectionManager.h; path = include/PoyntLib/PoyntPOSConnectionManager.h; sourceTree = "<group>"; };
-		DA09C351325151F380F6CD2130DE14AD /* PoyntTransactionResponseObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntTransactionResponseObject.h; path = include/PoyntLib/PoyntTransactionResponseObject.h; sourceTree = "<group>"; };
-		DA9ABCA98AE8384ECE722B61313C3864 /* PoyntTerminalDiscover.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PoyntTerminalDiscover.h; path = include/PoyntLib/PoyntTerminalDiscover.h; sourceTree = "<group>"; };
+		DC940418544B5C9EA50D60941F748705 /* libPoyntLib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libPoyntLib.a; sourceTree = "<group>"; };
 		DFEF638A71E6C286CB6B48DA6804EDAF /* Pods-PoyntSDKExampleApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PoyntSDKExampleApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		ED3240875D65EF77DA3B16DF7A6C1D18 /* PoyntDiscountObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PoyntDiscountObject.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,29 +58,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		066D5879EF34879541FBF05BF5A6661D /* PoyntLib */ = {
+		0CE9E343DA3F7579284DBC0CBD083CCA /* PoyntLib */ = {
 			isa = PBXGroup;
 			children = (
-				203BE8955BA199A04FE9A91BE593770C /* NSArray+Serialized.h */,
-				BD53BC5781FDBEBD10FFE7C4FEE7A48D /* PoyntDebug.h */,
-				985E34A6F50631D13E61E6FE14F7AD88 /* PoyntDiscountObject.h */,
-				5C6C62462120DFE4206FED06360A7660 /* PoyntLib.h */,
-				61BF435FAADA218F21CBD860849E3415 /* PoyntOrderItemObject.h */,
-				7148DDC5CCCC2B1C5EF0922A374CA3C4 /* PoyntOrderItemTax.h */,
-				34A720B1B259E6B38CFAB6837AA138E1 /* PoyntOrderObject.h */,
-				54D8D789D357B70D22FCE3412864689E /* PoyntPaymentAmountObject.h */,
-				B1793218ACDACD30E9CF2E4981302F93 /* PoyntPaymentObject.h */,
-				D827CF268AB6885D68E5B949ACA83F84 /* PoyntPOSConnectionManager.h */,
-				3ACD95E88901CD1756D169AD7052DCA7 /* PoyntSerializedObject.h */,
-				7D28E5200D7D9C61A509ADA03C42D851 /* PoyntTerminal.h */,
-				DA9ABCA98AE8384ECE722B61313C3864 /* PoyntTerminalDiscover.h */,
-				3FDD914007CB29288DADBF2197E96CC9 /* PoyntTransaction.h */,
-				13D0FE56AD6B22D004C5BDBE91C3B668 /* PoyntTransactionAmounts.h */,
-				02E2CD33B762C470C1F22B2D37DEEE55 /* PoyntTransactionObject.h */,
-				DA09C351325151F380F6CD2130DE14AD /* PoyntTransactionResponseObject.h */,
-				F2043318B9179837421A637C5246C2BE /* Frameworks */,
+				76FD6064AE54810C0AD318856B64E0C8 /* NSArray+Serialized.h */,
+				0877E4F1DF7580575C2B009DA6D6A209 /* PoyntDebug.h */,
+				ED3240875D65EF77DA3B16DF7A6C1D18 /* PoyntDiscountObject.h */,
+				9FA5DC078B7B87A0C006F5405A629B53 /* PoyntLib.h */,
+				0193FF2973FF0A63C3F2A3E19237C153 /* PoyntOrderItemObject.h */,
+				0536730262F4E8858C222A659F2B04AA /* PoyntOrderItemTax.h */,
+				5855472BA7660CE2828234D88F95B2CB /* PoyntOrderObject.h */,
+				0E5BE22E882812D4406914DE31C7A598 /* PoyntPaymentAmountObject.h */,
+				1FA4B502256F8741D20E2110F6137585 /* PoyntPaymentObject.h */,
+				C9F1A79FBD1C0DF63956143ED005999B /* PoyntPOSConnectionManager.h */,
+				89D90C88DEED5DC32F0A1E2DD08F8705 /* PoyntSerializedObject.h */,
+				B150143729BDA36B2E1B32DD14CF08AE /* PoyntTerminal.h */,
+				0AACAB33FC80DD62383FFDB795714821 /* PoyntTerminalDiscover.h */,
+				9FBAFBC64031DBECDCF8FD6BD09AB908 /* PoyntTransaction.h */,
+				C9CEDA8B1146233971A0321E32EDCE64 /* PoyntTransactionAmounts.h */,
+				0D7C7CF7EA6474497B3E1B38B52530BC /* PoyntTransactionObject.h */,
+				3952B901F78E7BAB95C79341BB9364A8 /* PoyntTransactionResponseObject.h */,
 			);
 			path = PoyntLib;
+			sourceTree = "<group>";
+		};
+		0EFA0D0AE4F91FDAE17DFC71C62C72F4 /* PoyntLib */ = {
+			isa = PBXGroup;
+			children = (
+				B8A58AD13D3DB4BFFB699EE91314D5E1 /* Frameworks */,
+				8643BDDEA66F05007D98A804C9D74FE9 /* include */,
+			);
+			name = PoyntLib;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -99,23 +108,39 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5B92C81916BDB2604A4B9200D8B6EBFE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				066D5879EF34879541FBF05BF5A6661D /* PoyntLib */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				9972BE43F938AAB2A5DFF9A3818D5909 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				5B92C81916BDB2604A4B9200D8B6EBFE /* Pods */,
 				50DBF6E4DA37A28E911F364434AACBFE /* Products */,
 				C2C8D3ED750AF7AADEA29077B4683534 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		8643BDDEA66F05007D98A804C9D74FE9 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				0CE9E343DA3F7579284DBC0CBD083CCA /* PoyntLib */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		9972BE43F938AAB2A5DFF9A3818D5909 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0EFA0D0AE4F91FDAE17DFC71C62C72F4 /* PoyntLib */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		B8A58AD13D3DB4BFFB699EE91314D5E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC940418544B5C9EA50D60941F748705 /* libPoyntLib.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -150,14 +175,6 @@
 				BD26C3DF75F99D2E2CBB03F01EF1683B /* Pods-PoyntSDKExampleApp */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		F2043318B9179837421A637C5246C2BE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A8F9944429B9E701C90285FE70928D00 /* libPoyntLib.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -4,5 +4,6 @@
 target 'PoyntSDKExampleApp' do
 
   use_frameworks!
-  pod 'PoyntLib', :git => 'https://github.com/mcconkiee/poyntsdk.git'
+  #pod 'PoyntLib', :git => 'https://github.com/mcconkiee/poyntsdk.git'
+  pod 'PoyntLib', :path => '../'
 end
