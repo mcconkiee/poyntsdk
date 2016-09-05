@@ -17,7 +17,7 @@ PoyntSDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "PoyntSDK", :git => ''
+pod "PoyntSDK", :git => 'https://github.com/mcconkiee/poyntsdk.git'
 ```
 
 If you are using swift, don't forget to create a Bridge header:
