@@ -1,16 +1,21 @@
 PODS:
-  - PoyntLib (0.1.0)
+  - PoyntLib (0.1.2)
 
 DEPENDENCIES:
-  - PoyntLib (from `../`)
+  - PoyntLib (from `https://github.com/mcconkiee/poyntsdk.git`)
 
 EXTERNAL SOURCES:
   PoyntLib:
-    :path: ../
+    :git: https://github.com/mcconkiee/poyntsdk.git
+
+CHECKOUT OPTIONS:
+  PoyntLib:
+    :commit: 79863b6de8a6ddb723e4bc00c131158499b9d172
+    :git: https://github.com/mcconkiee/poyntsdk.git
 
 SPEC CHECKSUMS:
-  PoyntLib: 26fd0cee82413931d4044280962cee0308e6ffc8
+  PoyntLib: 0ee0cc0b2fd4bf9e2f700da426b724956f2a8bba
 
-PODFILE CHECKSUM: 1200adf96a995a8c062df0f967a3553ec73e00ac
+PODFILE CHECKSUM: 5f266a764cc3925835a496ddf350d5bce0c28590
 
 COCOAPODS: 1.0.1

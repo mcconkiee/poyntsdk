@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-PoyntSDK_Tests.xcscheme</key>
+		<key>Pods-PoyntSDKExampleApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>DB3531885D2BCB8CD17489B68935BEB4</key>
+		<key>7CEDCCA22BBBC6356FFEA79188FA11C5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,1 +1,1 @@
-../../../../../include/PoyntLib/NSArray+Serialized.h
+../../../PoyntLib/include/PoyntLib/NSArray+Serialized.h

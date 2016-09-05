@@ -1,6 +1,0 @@
-framework module Pods_PoyntSDK_Tests {
-  umbrella header "Pods-PoyntSDK_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

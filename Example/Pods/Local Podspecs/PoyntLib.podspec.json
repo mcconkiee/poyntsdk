@@ -1,6 +1,6 @@
 {
   "name": "PoyntLib",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "summary": "The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart Terminal.",
   "description": "The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart Terminal. The terminal must have the POSConnector installed and running to make requests and pairing possible.",
   "homepage": "https://github.com/poynt/pos-connector-ios-sdk-sample",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/mcconkiee/poyntsdk.git",
-    "tag": "0.1.0"
+    "tag": "0.1.2"
   },
   "module_name": "PoyntLib",
   "libraries": "PoyntLib",
@@ -24,7 +24,7 @@
   "preserve_paths": "libPoyntlib.a",
   "vendored_libraries": "libPoyntlib.a",
   "xcconfig": {
-    "LIBRARY_SEARCH_PATHS": "$(PODS_ROOT)/PoyntLib"
+    "HEADER_SEARCH_PATHS": "$(PODS_ROOT)/PoyntLib/**/*.h"
   },
   "pod_target_xcconfig": {
     "OTHER_LDFLAGS": "$(inherited) -ObjC"

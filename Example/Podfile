@@ -1,6 +1,8 @@
-use_frameworks!
-target 'PoyntSDK_Tests' do
-  pod 'PoyntLib', :git => "https://github.com/mcconkiee/poyntsdk"
-  
-  
+# Uncomment this line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'PoyntSDKExampleApp' do
+
+  use_frameworks!
+  pod 'PoyntLib', :git => 'https://github.com/mcconkiee/poyntsdk.git'
 end
