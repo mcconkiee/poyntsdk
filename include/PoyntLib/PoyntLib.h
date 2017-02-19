@@ -21,7 +21,7 @@
 #import "PoyntDiscountObject.h"
 #import "PoyntOrderItemTax.h"
 #import "PoyntPaymentObject.h"
-#import "PoyntPrintObject.h
+#import "PoyntPrintObject.h"
 #import "PoyntOrderObject.h"
 #import "PoyntOrderItemObject.h"
 #import "PoyntTerminal.h"
