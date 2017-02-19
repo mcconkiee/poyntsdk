@@ -11,7 +11,8 @@
 
 /**
  @header PoyntTerminalDiscover
- @description Base class for finding terminals on the same WIFI network
+ @description Base class for finding terminals on the same WIFI network. The `PoyntTerminalDiscover` object is not required for a successful sdk experience, but can help describe available terminals on a given network. 
+ @see PoyntTerminal
  */
 typedef void(^OnTerminalsFound)(NSArray *terminal) ;
 

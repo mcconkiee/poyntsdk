@@ -43,6 +43,14 @@ typedef enum {
 }UnitOfMeasure;
 
 
+/**
+ @header PoyntOrderItemObject
+ @description order items are essential for the makeup of a PoyntPaymentObject. All order items declare their amount (in cents) and other details attached to accurately describe payments
+ 
+ @code
+ PoyntOrderItemObject *item  = [[PoyntOrderItemObject alloc] initWithSku:"unique.sku.name" unitPrice:200 quantity:2.1];
+ @endcode
+ */
 @interface PoyntOrderItemObject : NSObject <PoyntSerializedObject>
 /**
  @brief merchant notes for human readablity
