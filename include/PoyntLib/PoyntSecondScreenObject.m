@@ -31,7 +31,7 @@
     return @{
             @"currency": self.currency,
             @"totalAmount":[NSNumber numberWithInteger:self.totalAmount],
-            @"item":[self.items dictionaries]
+            @"items":[self.items dictionaries]
             };
 }
 @end
