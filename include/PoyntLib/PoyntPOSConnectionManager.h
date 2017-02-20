@@ -13,6 +13,7 @@
 @class PoyntPaymentObject;
 @class PoyntTransactionResponseObject;
 @class PoyntPrintObject;
+@class PoyntSecondScreenObject;
 
 /*!
  @brief The available type of actions for the `PoyntPOSConnectionManager`
@@ -235,4 +236,6 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
 -(void)authorizeAdjustment:(PoyntPaymentObject*)payment;
 
 -(void)printNormal:(PoyntPrintObject*)data;
+
+-(void)showItems:(PoyntSecondScreenObject*)data;
 @end
