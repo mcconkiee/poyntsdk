@@ -19,6 +19,7 @@
 #import "PoyntPaymentAmountObject.h"
 #import "PoyntDebug.h"
 #import "PoyntDiscountObject.h"
+#import "PoyntFeeObject.h"
 #import "PoyntOrderItemTax.h"
 #import "PoyntPaymentObject.h"
 #import "PoyntPrintObject.h"
