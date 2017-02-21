@@ -105,8 +105,8 @@ typedef enum {
  **/
 @property(nonatomic,readonly) NSInteger tax;
 
-@property(nonatomic,readonly) NSInteger discount;
-@property(nonatomic,readonly) NSInteger fee;
+@property(nonatomic) NSInteger discount;
+@property(nonatomic) NSInteger fee;
 
 /**
  @brief initialization that will set the sku , unitPrice and quantity
