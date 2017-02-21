@@ -62,6 +62,9 @@ typedef enum {
  @description items can have multiple discounts for various reasons. Store them here
  **/
 @property(nonatomic,strong) NSArray *discounts;
+
+@property(nonatomic,strong) NSArray *fees;
+
 /**
  @brief human friendly name for this item.
  @description The name can be any string and does not need to be unique
