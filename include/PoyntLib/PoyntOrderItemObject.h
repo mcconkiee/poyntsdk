@@ -104,6 +104,10 @@ typedef enum {
  @description If not specified, but the taxes array is present the server will automatically sum up the amounts in taxes array and populate this. If not specified and taxes array is empty, this will default to 0.
  **/
 @property(nonatomic,readonly) NSInteger tax;
+
+@property(nonatomic,readonly) NSInteger discount;
+@property(nonatomic,readonly) NSInteger fee;
+
 /**
  @brief initialization that will set the sku , unitPrice and quantity
  **/
