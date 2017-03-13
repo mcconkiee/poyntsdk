@@ -212,6 +212,7 @@
 				TargetAttributes = {
 					5DFB868C1D7E2F320095424B = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -372,6 +373,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = PoyntSDKExampleApp/Bridge.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -393,6 +395,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.poynt.PoyntSDKExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = PoyntSDKExampleApp/Bridge.h;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
