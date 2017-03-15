@@ -24,7 +24,7 @@ The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart 
   s.homepage              = 'https://github.com/poynt/pos-connector-ios-sdk-sample'
   s.license               = { :type => 'MIT', :file => 'LICENSE' }
   s.author                = { 'Eric McConkie' => 'eric@poynt.com' }  
-  s.source                = { :git => 'https://github.com/mcconkiee/poyntsdk.git', :tag => s.version.to_s }
+  s.source                = { :git => 'https://github.com/mcconkiee/poyntsdk.git', :tag => s.version.to_s, :branch => 'bugsnagg' }
   s.module_name           = "PoyntLib"
   s.libraries             = 'PoyntLib'
   
