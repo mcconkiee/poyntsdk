@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoyntLib'
-  s.version          = '0.1.6'
+  s.version          = '0.1.5'
   s.summary          = 'The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart Terminal.'
 
 # This description is used to generate tags and improve search results.
@@ -24,7 +24,7 @@ The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart 
   s.homepage              = 'https://github.com/poynt/pos-connector-ios-sdk-sample'
   s.license               = { :type => 'MIT', :file => 'LICENSE' }
   s.author                = { 'Eric McConkie' => 'eric@poynt.com' }  
-  s.source                = { :git => 'https://github.com/mcconkiee/poyntsdk.git', :tag => s.version.to_s, :branch => 'bugsnagg' }
+  s.source                = { :git => 'https://github.com/mcconkiee/poyntsdk.git',  :branch => 'bugsnagg' }
   s.module_name           = "PoyntLib"
   s.libraries             = 'PoyntLib'
   
