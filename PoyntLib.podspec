@@ -23,7 +23,7 @@ The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart 
   
   spec.ios.deployment_target = '8.0'  
   spec.source_files          = 'include/**/*.h'
-  spec.preserve_paths        = 'libPoyntlib.a'
+  spec.preserve_paths        = 'libPoyntlib.a', 'include/**/*.h'
   spec.vendored_libraries    = 'libPoyntlib.a'
   spec.library               = 'PoyntLib'
   #spec.xcconfig              = { 'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/PoyntLib/**/*.h' }     
@@ -32,5 +32,8 @@ The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart 
   }
 
   #Add bugsnag dependency for this build
-  #spec.dependency 'Bugsnag'
+  spec.dependency 'Bugsnag'
+  # spec.subspec 'Bugsnag' do |bugsnag|
+  #   bugsnag.public_header_files = 
+  # end
 end
