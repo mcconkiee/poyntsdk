@@ -6,36 +6,31 @@
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
 #
 
-Pod::Spec.new do |s|
-  s.name             = 'PoyntLib'
-  s.version          = '0.1.5'
-  s.summary          = 'The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart Terminal.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description           = <<-DESC
+Pod::Spec.new do |spec|
+  spec.name                  = 'PoyntLib'
+  spec.version               = '0.1.5'
+  spec.summary               = 'The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart Terminal.'
+  spec.description           = <<-DESC
 The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart Terminal. The terminal must have the POSConnector installed and running to make requests and pairing possible.
                        DESC
 
-  s.homepage              = 'https://github.com/poynt/pos-connector-ios-sdk-sample'
-  s.license               = { :type => 'MIT', :file => 'LICENSE' }
-  s.author                = { 'Eric McConkie' => 'eric@poynt.com' }  
-  s.source                = { :git => 'https://github.com/mcconkiee/poyntsdk.git',  :branch => 'bugsnagg' }
-  s.module_name           = "PoyntLib"
-  s.libraries             = 'PoyntLib'
+  spec.homepage              = 'https://github.com/poynt/pos-connector-ios-sdk-sample'
+  spec.license               = { :type => 'MIT', :file => 'LICENSE' }
+  spec.author                = { 'Eric McConkie' => 'eric@poynt.com' }  
+  spec.source                = { :git => 'https://github.com/mcconkiee/poyntsdk.git',  :branch => 'bugsnagg' }
+  spec.module_name           = "PoyntLib"
+  spec.libraries             = 'PoyntLib'
   
-  s.ios.deployment_target   = '8.0'  
-  s.source_files = 'include/**/*.h'
-  s.preserve_paths = 'libPoyntlib.a'
-  s.vendored_libraries  = 'libPoyntlib.a'
-  s.library = 'PoyntLib'
-  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/PoyntLib/**/*.h' }     
-  s.pod_target_xcconfig = {
+  spec.ios.deployment_target = '8.0'  
+  spec.source_files          = 'include/**/*.h'
+  spec.preserve_paths        = 'libPoyntlib.a'
+  spec.vendored_libraries    = 'libPoyntlib.a'
+  spec.library               = 'PoyntLib'
+  #spec.xcconfig              = { 'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/PoyntLib/**/*.h' }     
+  spec.pod_target_xcconfig   = {
     'OTHER_LDFLAGS' => '$(inherited) -ObjC'
   }
-  
+
+  #Add bugsnag dependency for this build
+  #spec.dependency 'Bugsnag'
 end
