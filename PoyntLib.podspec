@@ -1,39 +1,28 @@
 #
-# Be sure to run `pod lib lint PoyntLib.podspec' to ensure this is a
-# valid spec before submitting.
+#  Be sure to run `pod spec lint PoyntLib.podspec' to ensure this is a
+#  valid spec and to remove all comments including this before submitting the spec.
 #
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
+#  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
+#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
 #
 
-Pod::Spec.new do |spec|
-  spec.name                  = 'PoyntLib'
-  spec.version               = '0.1.5'
-  spec.summary               = 'The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart Terminal.'
-  spec.description           = <<-DESC
-The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart Terminal. The terminal must have the POSConnector installed and running to make requests and pairing possible.
-                       DESC
+Pod::Spec.new do |s|
 
-  spec.homepage              = 'https://github.com/poynt/pos-connector-ios-sdk-sample'
-  spec.license               = { :type => 'MIT', :file => 'LICENSE' }
-  spec.author                = { 'Eric McConkie' => 'eric@poynt.com' }  
-  spec.source                = { :git => 'https://github.com/mcconkiee/poyntsdk.git',  :branch => 'bugsnagg' }
-  spec.module_name           = "PoyntLib"
-  spec.libraries             = 'PoyntLib'
+  s.name         = "PoyntLib"
+  s.version      = "0.0.1"
+  s.summary      = "PoyntLib sdk for Poynt Smart terminal"
+  s.description  = <<-DESC
+  Bugsnag version....PoyntLib is a static library that allows iOS applications to communicate with a Poynt Smart Terminal
+                   DESC
+  s.homepage     = "http://poytn.net/PoyntLib"  
+  s.license      = "MIT"
+  s.author             = { "Eric McConkie" => "eric@ericmcconkie.com" }
   
-  spec.ios.deployment_target = '8.0'  
-  spec.source_files          = 'include/**/*.h'
-  spec.preserve_paths        = 'libPoyntlib.a', 'include/**/*.h'
-  spec.vendored_libraries    = 'libPoyntlib.a'
-  spec.library               = 'PoyntLib'
-  #spec.xcconfig              = { 'HEADER_SEARCH_PATHS' => '$(PODS_ROOT)/PoyntLib/**/*.h' }     
-  spec.pod_target_xcconfig   = {
-    'OTHER_LDFLAGS' => '$(inherited) -ObjC'
-  }
-
-  #Add bugsnag dependency for this build
-  spec.dependency 'Bugsnag'
-  # spec.subspec 'Bugsnag' do |bugsnag|
-  #   bugsnag.public_header_files = 
-  # end
+  s.platform     = :ios
+  s.source       = { :path => 'Debug-universal' }
+  s.public_header_files = 'Debug-universal/include/PoyntLib/**/*.h'
+  s.vendored_libraries    = 'Debug-universal/libPoyntLib.a'
+  s.preserve_paths        = 'Debug-universal/libPoyntLib.a', 'Debug-universal/include/PoyntLib/**/*.h'
+  s.dependency "Bugsnag"
+  
 end
