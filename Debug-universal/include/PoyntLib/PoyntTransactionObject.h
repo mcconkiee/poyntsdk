@@ -47,7 +47,7 @@
 /**
  @brief References to orders/invoices that this transaction is for.
  **/
-@property(nonatomic,strong) NSDictionary *references;
+@property(nonatomic,strong) NSArray *references;
 
 /**
  @brief create a PoyntTransactionObject using an appropriate formated dictionary object
