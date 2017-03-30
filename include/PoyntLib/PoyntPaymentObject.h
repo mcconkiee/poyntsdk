@@ -63,12 +63,6 @@
 
 @interface PoyntPaymentObject : NSObject <PoyntSerializedObject,PoyntTransaction>
 
-/**
- @brief if isDumb, wont perform any amount calculations and everything will be taken as passed in
- @returns boolean
- **/
-@property(nonatomic)BOOL isDumb;
-
 /** 
  @brief the total amount of this object
  @description The amount field should only be explicitly set when requesting a partial refund or partial completion. Otherwise this field is calculated from an attached PoyntOrderObject

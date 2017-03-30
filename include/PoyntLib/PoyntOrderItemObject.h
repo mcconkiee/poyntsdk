@@ -43,14 +43,6 @@ typedef enum {
 }UnitOfMeasure;
 
 
-/**
- @header PoyntOrderItemObject
- @description order items are essential for the makeup of a PoyntPaymentObject. All order items declare their amount (in cents) and other details attached to accurately describe payments
- 
- @code
- PoyntOrderItemObject *item  = [[PoyntOrderItemObject alloc] initWithSku:"unique.sku.name" unitPrice:200 quantity:2.1];
- @endcode
- */
 @interface PoyntOrderItemObject : NSObject <PoyntSerializedObject>
 /**
  @brief merchant notes for human readablity
@@ -62,9 +54,6 @@ typedef enum {
  @description items can have multiple discounts for various reasons. Store them here
  **/
 @property(nonatomic,strong) NSArray *discounts;
-
-@property(nonatomic,strong) NSArray *fees;
-
 /**
  @brief human friendly name for this item.
  @description The name can be any string and does not need to be unique
@@ -104,10 +93,6 @@ typedef enum {
  @description If not specified, but the taxes array is present the server will automatically sum up the amounts in taxes array and populate this. If not specified and taxes array is empty, this will default to 0.
  **/
 @property(nonatomic,readonly) NSInteger tax;
-
-@property(nonatomic) NSInteger discount;
-@property(nonatomic) NSInteger fee;
-
 /**
  @brief initialization that will set the sku , unitPrice and quantity
  **/

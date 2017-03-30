@@ -9,10 +9,7 @@
 #import <Foundation/Foundation.h>
 /**
  @header PoyntTerminal
- @description  objects are useful during the terminal discovery phase when on the same WIFI network. It is entirey possible to connect manually to a terminal without using a PoyntTerminal object,  as long as the ip address  and  connection code is known. 
- @see PoyntPOSConnectionManager
- 
- @todo allow multiple terminal connections. Currently, only one terminal connection is supported
+ @description PoyntTerminal objects are useful during ther terminal discovery phase when on the same WIFI network.
  **/
 @interface PoyntTerminal : NSObject
 /**

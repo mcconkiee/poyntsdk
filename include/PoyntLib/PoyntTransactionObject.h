@@ -9,10 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "PoyntSerializedObject.h"
 #import "PoyntTransaction.h"
-/**
- @header PoyntTransactionObject
- @brief 
- */
 @interface PoyntTransactionObject : NSObject <PoyntSerializedObject, PoyntTransaction>
 /**
  @brief UUIDString representing this object
@@ -36,12 +32,12 @@
  **/
 @property(nonatomic,strong) NSArray *amounts;
 /**
- @brief collection of funding source objects used for funding this transaction.
+ @description collection of funding source objects used for funding this transaction.
  @todo at current, we are not populating this field. Developers have access to the data in PoyntTransactionResponseObject.rawJson propety
  **/
 @property(nonatomic,strong) NSArray *fundingSource;
 /**
- @brief Contains context about the transaction.
+ @description Contains context about the transaction.
  **/
 @property(nonatomic,strong) NSDictionary *context;
 /**
@@ -50,7 +46,7 @@
 @property(nonatomic,strong) NSDictionary *references;
 
 /**
- @brief create a PoyntTransactionObject using an appropriate formated dictionary object
+ @description create a PoyntTransactionObject using an appropriate formated dictionary object
  **/
 -(id)initWithDictionary:(NSDictionary *)data;
 @end
