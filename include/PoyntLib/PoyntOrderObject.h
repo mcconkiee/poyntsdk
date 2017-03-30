@@ -36,6 +36,9 @@
  @description The amounts object will use this collection in its calculations for describing totals associated to this order object
  **/
 @property(nonatomic,strong) NSArray *discounts; //PoyntDiscountObject
+
+@property(nonatomic,strong) NSArray *fees; //PoyntFeeObject
+
 /**
  @brief array of PoyntOrderItemObject
  @description Orders contain at least one (or more) items. The amounts object will use this collection in its calculations for describing totals associated to this order object

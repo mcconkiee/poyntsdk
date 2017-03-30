@@ -7,10 +7,7 @@
 //
 /*!
  @header PoyntTransaction.h
-
- @brief When in doubt (or lazy) default to a PoyntTransactionObject. In cases where it is optimal to keep clear seperation, subscribe to PoyntTransaction . The transactionId property and dictionaryObject method are required
-
- 
+ @brief Interface that guarantees a `transactionId`. Object subscribing to this protocol are often (most likely) in reference to a previously existing transaction. When in doubt (or lazy) default to a PoyntTransactionObject. In cases where it is optimal to keep clear seperation, subscribe to PoyntTransaction . The transactionId property and dictionaryObject method are required
  */
 NS_ASSUME_NONNULL_BEGIN
 
