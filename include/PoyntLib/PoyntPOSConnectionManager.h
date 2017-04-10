@@ -12,6 +12,14 @@
 @class PoyntTransactionAmounts;
 @class PoyntPaymentObject;
 @class PoyntTransactionResponseObject;
+@class PoyntPrintObject;
+@class PoyntSecondScreenObject;
+
+/*!
+ @brief The available type of actions for the `PoyntPOSConnectionManager`
+ @discussion after calling an action on connection manager, the `OnTransactionResponse` or `OnError` block will be calledback. These callbacks contain the action type enum to help identify which action is being returned values in the event multiple requests were made.
+ */
+
 typedef enum {
     Undefined,
     AuthorizeCapture,
@@ -24,9 +32,15 @@ typedef enum {
     AuthorizeSales,
     AuthorizeVoid,
     AuthorizeVoidPreSales,
-    AuthorizeAdjustment
+    AuthorizeAdjustment,
+    Print,
+    ShowItems,
+    Ping
 } PoyntActionType;
 
+/*!
+ @brief The current pairing/connection status of a `PoyntPOSConnectionManager`  
+ */
 typedef enum{
     UnPaired,
     Pairing,
@@ -94,6 +108,8 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
 
  @discussion the block will contain a PoyntTransactionResponseObject object and PoyntActionType enum to clarify from which method is being calledback
  
+ @note While receiving this callback does mean that there were not errors in the request, it is not a guarantee that all results were as expected. It is important to verify results from the `PoyntTransactionResponseObject` that is returned in this callback.
+ 
  @code
  [paymentManager setOnTransactionResponse:^void(PoyntTransactionResponseObject *data,PoyntActionType actionType){
     if(actionType == AuthorizePair){
@@ -104,12 +120,13 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
  }];
  [paymentManager authorizeCapture:transactionObject]
  @endcode
+ 
  */
 @property (readwrite,copy) OnTransactionResponse onTransactionResponse;
 /*!
  @brief use the OnError block to capture the fail state response from the Poynt terminal in the event of an error
 
- @discussion the block will contain an NSError object and PoyntActionType enum
+ @discussion the block will contain an NSError object and `PoyntActionType` enum
  
  @code
  [paymentManager setOnError:^void(NSError *error, PoyntActionType actionType){
@@ -130,6 +147,17 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
 
  */
 -(void)authorizeCapture:(PoyntTransactionObject *)transaction;
+    
+
+/*!
+ @brief sends raw json...better know what you're doing
+ 
+ @discussion This expects a valid json object and an action type
+ 
+ @param  NSString
+ 
+ */
+-(void)authorizeJson:(NSString *)json actionType:(PoyntActionType)actionType;
 /*!
  @brief attempts to pair the iOS client with the Poynt terminal
 
@@ -217,4 +245,8 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
  @param  PoyntPaymentObject
  */
 -(void)authorizeAdjustment:(PoyntPaymentObject*)payment;
+
+-(void)printNormal:(PoyntPrintObject*)data;
+
+-(void)showItems:(PoyntSecondScreenObject*)data;
 @end
