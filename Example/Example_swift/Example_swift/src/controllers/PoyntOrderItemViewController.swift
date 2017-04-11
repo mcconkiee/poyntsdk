@@ -23,11 +23,11 @@ class PoyntOrderItemViewController: UIViewController,UITableViewDataSource,UITab
     @IBOutlet weak var tableViewDiscounts: UITableView!
     @IBOutlet weak var tableViewTaxes: UITableView!
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
 
         super.viewWillAppear(animated)
-        self.tableViewDiscounts.editing = true
-        self.tableViewTaxes.editing = true
+        self.tableViewDiscounts.isEditing = true
+        self.tableViewTaxes.isEditing = true
         self.title = "Payment"
         if let itm = self.item as PoyntOrderItemObject? {
             self.isNewItem = false
@@ -75,7 +75,7 @@ class PoyntOrderItemViewController: UIViewController,UITableViewDataSource,UITab
         }
         //close
         if let pres = self.presentingViewController as UIViewController? {
-            pres.dismissViewControllerAnimated(true, completion: nil)
+            pres.dismiss(animated: true, completion: nil)
         }
     }
 
@@ -83,41 +83,41 @@ class PoyntOrderItemViewController: UIViewController,UITableViewDataSource,UITab
 
         //close
         if let pres = self.presentingViewController as UIViewController? {
-            pres.dismissViewControllerAnimated(true, completion: nil)
+            pres.dismiss(animated: true, completion: nil)
         }
     }
 
-    @IBAction func onAddTax(sender: UIButton) {
+    @IBAction func onAddTax(_ sender: UIButton) {
         self.alertFor("Tax")
     }
 
-    @IBAction func onAddDiscount(sender: UIButton) {
+    @IBAction func onAddDiscount(_ sender: UIButton) {
         self.alertFor("Discount")
     }
 
-    func alertFor(type:String) {
+    func alertFor(_ type:String) {
         var ttl = "Add Discount"
         if type == "Tax" {
             ttl = "Add Tax"
         }
 
 
-        let alert = UIAlertController(title: ttl, message: "Add amount in cents", preferredStyle: .Alert)
-        alert.addTextFieldWithConfigurationHandler { (textfield) -> Void in
+        let alert = UIAlertController(title: ttl, message: "Add amount in cents", preferredStyle: .alert)
+        alert.addTextField { (textfield) -> Void in
             textfield.placeholder = "Name"
             if type == "Tax" {
                 textfield.placeholder = "Type"
             }
         }
 
-        alert.addTextFieldWithConfigurationHandler { (textfield) -> Void in
+        alert.addTextField { (textfield) -> Void in
             textfield.placeholder = "amount"
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .Default) { (alertAction) -> Void in
+        let cancel = UIAlertAction(title: "Cancel", style: .default) { (alertAction) -> Void in
 
         }
         alert.addAction(cancel)
-        let ok = UIAlertAction(title: "Ok", style: .Default) { (alertAction) -> Void in
+        let ok = UIAlertAction(title: "Ok", style: .default) { (alertAction) -> Void in
             if let tfs = alert.textFields as [UITextField]? {
                 if type == "Tax" {
                     let tx = PoyntOrderItemTax(amount: Int(tfs[1].text!)!, type: tfs[0].text!)
@@ -132,7 +132,7 @@ class PoyntOrderItemViewController: UIViewController,UITableViewDataSource,UITab
             }
         }
         alert.addAction(ok)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 
     @IBAction func onExitAndRemove(){
@@ -151,13 +151,13 @@ class PoyntOrderItemViewController: UIViewController,UITableViewDataSource,UITab
         
         //close
         if let pres = self.presentingViewController as UIViewController? {
-            pres.dismissViewControllerAnimated(true, completion: nil)
+            pres.dismiss(animated: true, completion: nil)
         }
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let idSt = "ItemDiscountCell"
-        if let cell = tableView.dequeueReusableCellWithIdentifier(idSt) as UITableViewCell? {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: idSt) as UITableViewCell? {
             if let itm = self.item as PoyntOrderItemObject? {
                 if tableView == self.tableViewDiscounts{
                     if let discounts = itm.discounts as? [PoyntDiscountObject] {
@@ -175,10 +175,10 @@ class PoyntOrderItemViewController: UIViewController,UITableViewDataSource,UITab
             }
             return cell
         }
-        return UITableViewCell(style: .Default, reuseIdentifier: idSt)
+        return UITableViewCell(style: .default, reuseIdentifier: idSt)
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let itm = self.item as PoyntOrderItemObject?{
 
             if tableView == self.tableViewDiscounts{
@@ -198,22 +198,22 @@ class PoyntOrderItemViewController: UIViewController,UITableViewDataSource,UITab
         return 0
     }
 
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
 
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if let itm = self.item as PoyntOrderItemObject?{
             if tableView == self.tableViewDiscounts{
                 if var objs = itm.discounts as? [PoyntDiscountObject] {
 
                     //remove the data
-                    objs.removeAtIndex(indexPath.row)
+                    objs.remove(at: indexPath.row)
                     self.item?.discounts = objs
 
                     //animate
                     tableView.beginUpdates()
-                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
                     tableView.endUpdates()
                 }
             }
@@ -222,12 +222,12 @@ class PoyntOrderItemViewController: UIViewController,UITableViewDataSource,UITab
                 if var objs = itm.taxes as? [PoyntOrderItemTax] {
 
                     //remove the data
-                    objs.removeAtIndex(indexPath.row)
+                    objs.remove(at: indexPath.row)
                     self.item?.taxes = objs
 
                     //animate
                     tableView.beginUpdates()
-                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
                     tableView.endUpdates()
                 }
             }

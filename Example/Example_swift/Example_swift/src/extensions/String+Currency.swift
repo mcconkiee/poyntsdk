@@ -9,12 +9,12 @@
 import Foundation
 extension String {
 
-    static func currencyForFloat(amnt:Float) -> String {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .CurrencyStyle
+    static func currencyForFloat(_ amnt:Float) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
 
         let amt = amnt / 100.0
-        if let val = formatter.stringFromNumber(NSNumber(float: amt)) as String? {
+        if let val = formatter.string(from: NSNumber(value: amt as Float)) as String? {
             return val
         }
         return ""
