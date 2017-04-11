@@ -50,26 +50,26 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
 
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let isPaired = (self.paymentManager.pairingStatus == Paired)
         if(!isPaired && self.initialLoad){
             self.initialLoad = false
             self.selectingTerminal = true
-            self.performSegueWithIdentifier("segueDiscovery", sender: self)
+            self.performSegue(withIdentifier: "segueDiscovery", sender: self)
         }
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
         updateUI()
     }
     // MARK: - segues and ux
-    @IBAction func unwindToHome(segue: UIStoryboardSegue) {
+    @IBAction func unwindToHome(_ segue: UIStoryboardSegue) {
         if segue.identifier == "unwindToHome" {
             self.toggleHud(false)
-            if let vc = segue.sourceViewController as? ChooseTerminalViewController,
+            if let vc = segue.source as? ChooseTerminalViewController,
                 let terminal = vc.selectedTerminal as PoyntTerminal?{
                 if let ip = terminal.ip as String?,
                     let port = terminal.service?.port as Int? {
@@ -84,10 +84,10 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
     }
 
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueForItemDetails" {
 
-            if let nav = segue.destinationViewController as? UINavigationController,
+            if let nav = segue.destination as? UINavigationController,
                 let vc = nav.topViewController as? PoyntOrderItemViewController {
                 vc.order = payment.order
                 vc.item = self.currentItem
@@ -111,15 +111,15 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         
 
         let item0 = PoyntOrderItemObject(sku: "testOrderItem_2", unitPrice: 100, quantity: 10.0)
-        item0.name = "Drip Coffee"
-        item0.unitOfMeasure = EACH
-        item0.status = "ORDERED"
+        item0?.name = "Drip Coffee"
+        item0?.unitOfMeasure = EACH
+        item0?.status = "ORDERED"
 
         //discount example
-        item0.discounts = [PoyntDiscountObject(amount: 20, customName: "item discount")]
+        item0?.discounts = [PoyntDiscountObject(amount: 20, customName: "item discount")]
 
         //tax example
-        item0.taxes = [PoyntOrderItemTax(amount:100,type: "Plastic lids")]
+        item0?.taxes = [PoyntOrderItemTax(amount:100,type: "Plastic lids")]
 
         //add the items to the order
         payment.order?.items = [item0]
@@ -129,13 +129,13 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
     func setupDefaultUI() {
 //        self.btnPair.setTitle("Pair", forState: .Normal)
         self.textViewResponse.text = ""
-        self.bottomContainer.hidden = true
+        self.bottomContainer.isHidden = true
 
     }
-    func toggleHud(show:Bool){
-        UIView.animateWithDuration(0.4) { 
+    func toggleHud(_ show:Bool){
+        UIView.animate(withDuration: 0.4, animations: { 
             self.spinnerContainer.alpha = (show) ? 1 : 0;
-        }
+        }) 
     }
     func setupPaymentManager() {
 
@@ -149,12 +149,12 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         //...because nothing is perfect
         paymentManager.onError = {(error, apiType) -> Void in
             self.toggleHud(false)
-
-
-            let alert = UIAlertController(title: "Erorr.", message: "There was an error. \(error.userInfo.description)", preferredStyle: .Alert)
-            let cancel = UIAlertAction(title: "ok", style: .Default, handler:nil)
-            alert.addAction(cancel)
-            self.presentViewController(alert, animated: true, completion: nil)
+            if let err = error as NSError?{
+                let alert = UIAlertController(title: "Erorr.", message: "There was an error. \(err.userInfo.description)", preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "ok", style: .default, handler:nil)
+                alert.addAction(cancel)
+                self.present(alert, animated: true, completion: nil)
+            }
         }
 
         //...gets a transaction object
@@ -165,8 +165,8 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
                      
                 if let json = obj.rawJson as AnyObject?{
                     let transIds = obj.transactions.map({
-                        "id: \($0.transactionId ?? "")"
-                    }).joinWithSeparator("\r\n")
+                        "id: \(($0 as AnyObject).transactionId ?? "")"
+                    }).joined(separator: "\r\n")
                     self.mostRecentTransactionId = transIds
                     self.textViewResponse.text = "Transactions:\r\n\(transIds)\r\n\(json.description)"
                 }
@@ -178,14 +178,14 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
                 var refund: UIAlertAction?
                 var capture: UIAlertAction?
                 if obj.status == "COMPLETED" || obj.status == "SUCCESS"{
-                    self.bottomContainer.hidden = false
+                    self.bottomContainer.isHidden = false
                     if type == AuthorizePair {
-                        self.dismissViewControllerAnimated(false, completion: nil)
-                        self.btnPair.setTitle("Device is Paired", forState: .Normal)
-                        self.btnPair.backgroundColor = UIColor.lightGrayColor()
+                        self.dismiss(animated: false, completion: nil)
+                        self.btnPair.setTitle("Device is Paired", for: UIControlState())
+                        self.btnPair.backgroundColor = UIColor.lightGray
                     }
                     if type == AuthorizeSales || type == AuthorizePreSales {
-                        refund = UIAlertAction(title: "Void", style: .Destructive, handler: { (action) in
+                        refund = UIAlertAction(title: "Void", style: .destructive, handler: { (action) in
                             if let transaction = obj.transactions.first as? PoyntTransactionObject {
                                 if type == AuthorizeSales {
                                     self.poyntAction(AuthorizeVoid, transaction: transaction)
@@ -196,7 +196,7 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
                             }
                         })
 
-                        capture = UIAlertAction(title: "Capture", style: .Default, handler: { (action) in
+                        capture = UIAlertAction(title: "Capture", style: .default, handler: { (action) in
                             if let transaction = obj.transactions.first as? PoyntTransactionObject {
                                 self.poyntAction(AuthorizeCapture, transaction: transaction)
                             }
@@ -209,8 +209,8 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
                     msg = "There was a problem with the transaction."
                 }
 
-                let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
-                let ok = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+                let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
                 alert.addAction(ok)
 
                 //action options
@@ -222,10 +222,10 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
                 }
 
 
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
 
                 //set/ re-set a reference id for a new payment
-                let newId = NSUUID().UUIDString
+                let newId = UUID().uuidString
                 self.payment.referenceId = newId
                 self.updateUI()
                 
@@ -240,8 +240,8 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         if let order = payment.order as PoyntOrderObject?,
         let amnts = order.amounts as PoyntPaymentAmountObject? {
 
-            let formatter = NSNumberFormatter()
-            formatter.numberStyle = .CurrencyStyle
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .currency
 
 
             lblSubtotal.text = "Subtotal:\t\(String.currencyForFloat(Float(amnts.subTotal)))"
@@ -251,11 +251,11 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         }
 
 
-        let bb = UIBarButtonItem(title: "...", style: .Plain, target: self, action: #selector(PoyntPaymentViewController.onActionSheet))
+        let bb = UIBarButtonItem(title: "...", style: .plain, target: self, action: #selector(PoyntPaymentViewController.onActionSheet))
         self.navigationItem.rightBarButtonItem = bb
     }
 
-    func onDoAction(tpe:PoyntActionType){
+    func onDoAction(_ tpe:PoyntActionType){
         var ttle = ""
         switch tpe {
         case AuthorizeRefund:
@@ -273,9 +273,9 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         default:
             print("\(#function)\r\nunsupported type ---> \(tpe)")
         }
-        let alert = UIAlertController(title: ttle, message: "Add a transactionId", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Do it.", style: .Destructive, handler: { (action) in
+        let alert = UIAlertController(title: ttle, message: "Add a transactionId", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Do it.", style: .destructive, handler: { (action) in
 
             if let idd = alert.textFields?.first?.text as String?{
                 if tpe == AuthorizeCompletion || tpe == AuthorizeAdjustment{
@@ -291,42 +291,42 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
             }
         }))
 
-        alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Enter transaction id"
         })
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 
     func onActionSheet(){
-        let alert = UIAlertController(title: "Other Actions", message: "Choose an action below.", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let alert = UIAlertController(title: "Other Actions", message: "Choose an action below.", preferredStyle: UIAlertControllerStyle.actionSheet)
 
-        alert.addAction(UIAlertAction(title: "Void", style: .Default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Void", style: .default, handler: { (action) in
             self.onDoAction(AuthorizeVoid)
         }))
 
-        alert.addAction(UIAlertAction(title: "Capture", style: .Default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Capture", style: .default, handler: { (action) in
             self.onDoAction(AuthorizeCapture)
         }))
 
-        alert.addAction(UIAlertAction(title: "Refund", style: .Default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Refund", style: .default, handler: { (action) in
             self.onDoAction(AuthorizeRefund)
         }))
-        alert.addAction(UIAlertAction(title: "Completion", style: .Default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Completion", style: .default, handler: { (action) in
             self.onDoAction(AuthorizeCompletion)
         }))
-        alert.addAction(UIAlertAction(title: "Partial Refund", style: .Default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Partial Refund", style: .default, handler: { (action) in
             self.onDoAction(AuthorizePartialRefund)
         }))
-        alert.addAction(UIAlertAction(title: "Adjust Amount/Tip", style: .Default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Adjust Amount/Tip", style: .default, handler: { (action) in
             self.onDoAction(AuthorizeAdjustment)
         }))
 
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler:nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
 
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 
-    func poyntAction(action:PoyntActionType,transaction:AnyObject){
+    func poyntAction(_ action:PoyntActionType,transaction:AnyObject){
         self.toggleHud(true)
         switch action {
         case AuthorizeSales:
@@ -359,7 +359,7 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
 
 
     // MARK: - IBACTIONS
-    @IBAction func sendData(btn:UIButton){
+    @IBAction func sendData(_ btn:UIButton){
         let code = self.tfCode.text!        
         self.paymentManager.pairingCode = code;
         self.paymentManager.url = self.tfIP.text!;
@@ -377,9 +377,9 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         }
     }
 
-    func partialRefundForTransactionId(trnxId:String){
-        let alert = UIAlertController(title: "Partial Refund", message: "Enter the amount.", preferredStyle: .Alert);
-        let send = UIAlertAction(title: "Send", style: .Default, handler: { (action) in
+    func partialRefundForTransactionId(_ trnxId:String){
+        let alert = UIAlertController(title: "Partial Refund", message: "Enter the amount.", preferredStyle: .alert);
+        let send = UIAlertAction(title: "Send", style: .default, handler: { (action) in
 
             var amt: Int = 0
 
@@ -398,17 +398,17 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
             self.poyntAction(AuthorizePartialRefund, transaction: payment);
         });
         alert.addAction(send)
-        alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Amount: 100 = $1.00"
         })
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
     
 
-    func partialCompletionForTransactionId(trnxId:String, actionType: PoyntActionType){
-        let alert = UIAlertController(title: "Add Tip?", message: "Enter tip amount, or leave blank if you do not want to add a tip.", preferredStyle: .Alert);
-        let send = UIAlertAction(title: "Send", style: .Default, handler: { (action) in
+    func partialCompletionForTransactionId(_ trnxId:String, actionType: PoyntActionType){
+        let alert = UIAlertController(title: "Add Tip?", message: "Enter tip amount, or leave blank if you do not want to add a tip.", preferredStyle: .alert);
+        let send = UIAlertAction(title: "Send", style: .default, handler: { (action) in
 
             var amt: Int = 0
             var tipAmount: Int = 0
@@ -434,17 +434,17 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
             self.poyntAction(actionType, transaction: payment);
         });
         alert.addAction(send)
-        alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Amount: 100 = $1.00"
         })
-        alert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Tip: 100 = $1.00"
         })
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     //MARK: table view delegate
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! ItemTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ItemTableViewCell
         if let ordr = self.payment.order as PoyntOrderObject? ,
         let itms = ordr.items as? [PoyntOrderItemObject] {
             cell.lblTitle.text = "\(itms[indexPath.row].name!) x \(itms[indexPath.row].quantity)"
@@ -453,7 +453,7 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         return cell
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let po = payment.order as PoyntOrderObject?,
             let items = po.items as? [PoyntOrderItemObject] {
                 return items.count
@@ -461,12 +461,12 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         return 0
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let ordr = payment.order as PoyntOrderObject?,
             let items = ordr.items as? [PoyntOrderItemObject],
             let item  = items[indexPath.row] as PoyntOrderItemObject? {
             self.currentItem = item
-            self.performSegueWithIdentifier("segueForItemDetails", sender: nil)
+            self.performSegue(withIdentifier: "segueForItemDetails", sender: nil)
         }
     }
 

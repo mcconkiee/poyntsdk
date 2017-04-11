@@ -26,11 +26,11 @@ class ChooseTerminalViewController: UITableViewController{
         }
 
     }
-    @IBAction func onCancel(sender: AnyObject) {
-        self.performSegueWithIdentifier("unwindToHome", sender: self)
+    @IBAction func onCancel(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "unwindToHome", sender: self)
     }
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell = self.tableView.dequeueReusableCellWithIdentifier("terminalCell") as UITableViewCell?{
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = self.tableView.dequeueReusableCell(withIdentifier: "terminalCell") as UITableViewCell?{
             let poyntTerminal = self.data[indexPath.row]
             cell.textLabel!.text = poyntTerminal.name
             cell.detailTextLabel!.text = "\(poyntTerminal.ip!):\(poyntTerminal.service!.port)"
@@ -39,13 +39,13 @@ class ChooseTerminalViewController: UITableViewController{
         return UITableViewCell()
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let poyntTerminal = self.data[indexPath.row]
         self.selectedTerminal = poyntTerminal
-        self.performSegueWithIdentifier("unwindToHome", sender: self)
+        self.performSegue(withIdentifier: "unwindToHome", sender: self)
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
 
