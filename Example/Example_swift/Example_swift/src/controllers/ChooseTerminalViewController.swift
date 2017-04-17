@@ -10,6 +10,7 @@ import UIKit
 
 
 class ChooseTerminalViewController: UITableViewController{
+    var paymentManager: PoyntPOSConnectionManager!
     let discovery = PoyntTerminalDiscover()
     var data: [PoyntTerminal] = []
     var selectedTerminal: PoyntTerminal?
@@ -42,7 +43,19 @@ class ChooseTerminalViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let poyntTerminal = self.data[indexPath.row]
         self.selectedTerminal = poyntTerminal
-        self.performSegue(withIdentifier: "unwindToHome", sender: self)
+        
+        self.paymentManager.attemptPairing { (done, error) in
+            if(error == nil){
+                self.performSegue(withIdentifier: "unwindToHome", sender: self)
+            }else{
+                let alert = UIAlertController(title: "Pairing Problem", message: "There was a problem pairing with \(poyntTerminal)", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) in
+                    
+                })
+                alert.addAction(ok)
+                self.present(alert, animated: true)
+            }
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

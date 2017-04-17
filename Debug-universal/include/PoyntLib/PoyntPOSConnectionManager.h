@@ -12,6 +12,8 @@
 @class PoyntTransactionAmounts;
 @class PoyntPaymentObject;
 @class PoyntTransactionResponseObject;
+@class PoyntPrintObject;
+@class PoyntSecondScreenObject;
 
 /*!
  @brief The available type of actions for the `PoyntPOSConnectionManager`
@@ -23,6 +25,7 @@ typedef enum {
     AuthorizeCapture,
     AuthorizeCompletion,
     AuthorizePair,
+    AuthorizePairWithKey,
     AuthorizePreSales,
     AuthorizePartialCompletion,
     AuthorizePartialRefund,
@@ -30,7 +33,10 @@ typedef enum {
     AuthorizeSales,
     AuthorizeVoid,
     AuthorizeVoidPreSales,
-    AuthorizeAdjustment
+    AuthorizeAdjustment,
+    Print,
+    ShowItems,
+    Ping
 } PoyntActionType;
 
 /*!
@@ -132,6 +138,8 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
  */
 @property (readwrite,copy) OnError onError;
 
+-(void)attemptPairing:(void(^)(bool flag,NSError *err))block;
+
 /*!
  @brief sends a captured sale request to the Poynt terminal
 
@@ -142,6 +150,17 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
 
  */
 -(void)authorizeCapture:(PoyntTransactionObject *)transaction;
+    
+
+/*!
+ @brief sends raw json...better know what you're doing
+ 
+ @discussion This expects a valid json object and an action type
+ 
+ @param  NSString
+ 
+ */
+-(void)authorizeJson:(NSString *)json actionType:(PoyntActionType)actionType;
 /*!
  @brief attempts to pair the iOS client with the Poynt terminal
 
@@ -229,4 +248,11 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
  @param  PoyntPaymentObject
  */
 -(void)authorizeAdjustment:(PoyntPaymentObject*)payment;
+
+-(void)printNormal:(PoyntPrintObject*)data;
+
+-(void)showItems:(PoyntSecondScreenObject*)data;
+
+-(void)reset;
+
 @end

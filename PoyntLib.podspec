@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "PoyntLib"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "PoyntLib sdk for Poynt Smart terminal"
   s.description  = <<-DESC
   Bugsnag version....PoyntLib is a static library that allows iOS applications to communicate with a Poynt Smart Terminal
@@ -24,5 +24,6 @@ Pod::Spec.new do |s|
   s.vendored_libraries    = 'Debug-universal/libPoyntLib.a'
   s.preserve_paths        = 'Debug-universal/libPoyntLib.a', 'Debug-universal/include/PoyntLib/**/*.h'
   s.dependency "Bugsnag"
+  s.dependency "OpenSSL-Universal"
   
 end

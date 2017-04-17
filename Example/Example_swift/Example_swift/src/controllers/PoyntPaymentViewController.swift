@@ -9,7 +9,14 @@
 import UIKit
 
 
+
 class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITableViewDelegate  {
+    struct Constants {
+        
+        static let segueItemDetails = "segueForItemDetails"
+        static let segueDiscovery   = "segueDiscovery"
+        
+    }
     @IBOutlet weak var spinnerContainer: UIView!
     @IBOutlet weak var tfIP:UITextField!
     @IBOutlet weak var tfCode:UITextField!
@@ -33,16 +40,17 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
     let payment = PoyntPaymentObject()
     var currentItem: PoyntOrderItemObject?
     var mostRecentTransactionId: String = "xxx"
-    var selectingTerminal: Bool = false
+    
     var initialLoad: Bool = true
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
 //        PoyntDebug.sharedDebugger().verbose = false
         self.setupSamplePayment()
-        self.setupDefaultUI()
+//        self.setupDefaultUI()
+        self.toggleHud(false)
         self.setupPaymentManager()
         self.tfCode.text = self.paymentManager.pairingCode
         self.tfIP.text = self.paymentManager.url
@@ -52,11 +60,14 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let isPaired = (self.paymentManager.pairingStatus == Paired)
-        if(!isPaired && self.initialLoad){
-            self.initialLoad = false
-            self.selectingTerminal = true
-            self.performSegue(withIdentifier: "segueDiscovery", sender: self)
+        
+//        self.toggleHud(true)
+        self.paymentManager.ping { (isPaired, error) in
+            if isPaired {
+                self.toggleHud(false)
+            }else{
+                self.performSegue(withIdentifier: Constants.segueDiscovery, sender: nil)
+            }
         }
     }
 
@@ -79,7 +90,18 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
                 }
 
             }
-            self.selectingTerminal = false
+            
+            if(self.paymentManager.pairingCode == nil){
+                self.paymentManager.attemptPairing({ (flag, error) in
+                    if let err = error as NSError?{
+                        self.toggleHud(true)
+                        self.performSegue(withIdentifier: Constants.segueDiscovery, sender: nil);
+                        print("error pairing \(err.localizedDescription)")
+                    }else{
+                        self.toggleHud(false)
+                    }
+                })
+            }
         }
     }
 
@@ -93,6 +115,17 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
                 vc.item = self.currentItem
             }
             self.currentItem = nil
+        }
+        
+        if segue.identifier == "segueDiscovery" {
+            if let nav = segue.destination as? UINavigationController,
+                let vc = nav.topViewController as? ChooseTerminalViewController {
+                vc.paymentManager = self.paymentManager
+            }
+            
+            
+            
+            
         }
     }
 
@@ -151,10 +184,12 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
             self.toggleHud(false)
 
             //FIXME - error userInfo conversion
-//            let alert = UIAlertController(title: "Erorr.", message: "There was an error. \(error.userInfo.description)", preferredStyle: .alert)
-//            let cancel = UIAlertAction(title: "ok", style: .default, handler:nil)
-//            alert.addAction(cancel)
-//            self.present(alert, animated: true, completion: nil)
+            if let ner = error as NSError?{
+                let alert = UIAlertController(title: "Erorr.", message: "There was an error. \(ner.userInfo.description)", preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "ok", style: .default, handler:nil)
+                alert.addAction(cancel)
+                self.present(alert, animated: true, completion: nil)
+            }
         }
 
         //...gets a transaction object
@@ -179,7 +214,7 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
                 var capture: UIAlertAction?
                 if obj.status == "COMPLETED" || obj.status == "SUCCESS"{
                     self.bottomContainer.isHidden = false
-                    if type == AuthorizePair {
+                    if type == AuthorizePair || type == AuthorizePairWithKey {
                         self.dismiss(animated: false, completion: nil)
                         self.btnPair.setTitle("Device is Paired", for: UIControlState())
                         self.btnPair.backgroundColor = UIColor.lightGray
@@ -232,7 +267,7 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
             }
         }
         //try to auto connect
-        self.paymentManager.authorizePairing(self.paymentManager.pairingCode)
+//        self.paymentManager.authorizePairing(self.paymentManager.pairingCode)
     }
 
     func updateUI() {
@@ -361,7 +396,7 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
     // MARK: - IBACTIONS
     @IBAction func sendData(_ btn:UIButton){
         let code = self.tfCode.text!        
-        self.paymentManager.pairingCode = code;
+//        self.paymentManager.pairingCode = code;
         self.paymentManager.url = self.tfIP.text!;
         
         if(btn == self.btnSale){
@@ -466,7 +501,7 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
             let items = ordr.items as? [PoyntOrderItemObject],
             let item  = items[indexPath.row] as PoyntOrderItemObject? {
             self.currentItem = item
-            self.performSegue(withIdentifier: "segueForItemDetails", sender: nil)
+            self.performSegue(withIdentifier: Constants.segueItemDetails, sender: nil)
         }
     }
 

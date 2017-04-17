@@ -62,6 +62,9 @@ typedef enum {
  @description items can have multiple discounts for various reasons. Store them here
  **/
 @property(nonatomic,strong) NSArray *discounts;
+
+@property(nonatomic,strong) NSArray *fees;
+
 /**
  @brief human friendly name for this item.
  @description The name can be any string and does not need to be unique
@@ -101,6 +104,10 @@ typedef enum {
  @description If not specified, but the taxes array is present the server will automatically sum up the amounts in taxes array and populate this. If not specified and taxes array is empty, this will default to 0.
  **/
 @property(nonatomic,readonly) NSInteger tax;
+
+@property(nonatomic) NSInteger discount;
+@property(nonatomic) NSInteger fee;
+
 /**
  @brief initialization that will set the sku , unitPrice and quantity
  **/

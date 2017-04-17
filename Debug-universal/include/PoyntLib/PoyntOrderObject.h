@@ -39,6 +39,8 @@
 @property(nonatomic,strong) NSArray *discounts; //PoyntDiscountObject
 
 
+@property(nonatomic,strong) NSArray *fees; //PoyntFeeObject
+
 
 /**
  @brief array of PoyntOrderItemObject
