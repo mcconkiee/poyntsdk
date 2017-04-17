@@ -84,8 +84,7 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
                 let terminal = vc.selectedTerminal as PoyntTerminal?{
                 if let ip = terminal.ip as String?,
                     let port = terminal.service?.port as Int? {
-                    self.tfIP.text = "\(ip):\(port)"
-                    self.paymentManager.url = self.tfIP.text!;
+                    self.tfIP.text = "\(ip):\(port)"                    
                     self.title = terminal.name
                 }
 

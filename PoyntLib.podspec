@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
   Bugsnag version....PoyntLib is a static library that allows iOS applications to communicate with a Poynt Smart Terminal
                    DESC
-  s.homepage     = "http://poytn.net/PoyntLib"  
+  s.homepage     = "http://poynt.net/PoyntLib"  
   s.license      = "MIT"
   s.author             = { "Eric McConkie" => "eric@ericmcconkie.com" }
   

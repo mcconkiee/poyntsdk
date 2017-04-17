@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		346B936764C74DE7F60F5C71 /* Pods_Example_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E23E7CB9EBD172A1E32A13 /* Pods_Example_swift.framework */; };
 		5D7480381E7C3E0200325A1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D74802D1E7C3E0200325A1A /* Assets.xcassets */; };
 		5D7480391E7C3E0200325A1A /* ChooseTerminalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D74802F1E7C3E0200325A1A /* ChooseTerminalViewController.swift */; };
 		5D74803A1E7C3E0200325A1A /* PoyntOrderItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7480301E7C3E0200325A1A /* PoyntOrderItemViewController.swift */; };
@@ -17,6 +16,8 @@
 		5D74803E1E7C3E0200325A1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D7480351E7C3E0200325A1A /* Main.storyboard */; };
 		5D74803F1E7C3E0200325A1A /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7480371E7C3E0200325A1A /* ItemTableViewCell.swift */; };
 		5D74810F1E7CBC9F00325A1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D74810E1E7CBC9F00325A1A /* AppDelegate.swift */; };
+		5DBEA6491EA54FFE00C6116D /* Pods_Example_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBEA6481EA54FFE00C6116D /* Pods_Example_swift.framework */; };
+		81ACF5063840CD8477891C53 /* Pods_Example_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E23E7CB9EBD172A1E32A13 /* Pods_Example_swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5D74810E1E7CBC9F00325A1A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = src/AppDelegate.swift; sourceTree = "<group>"; };
 		5DBACF321E7B31C9008CD251 /* Example_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBACF411E7B31C9008CD251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DBEA6481EA54FFE00C6116D /* Pods_Example_swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Example_swift.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Example_swift-gqyxjkcxjroxtqbnzrdtpcbirmqw/Build/Products/Debug-iphonesimulator/Pods_Example_swift.framework"; sourceTree = "<group>"; };
 		5DDEC6D21E7B32C90022E9D0 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		83E23E7CB9EBD172A1E32A13 /* Pods_Example_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8F1D9157D83A056392FF88 /* Pods-Example_swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example_swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example_swift/Pods-Example_swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -42,7 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				346B936764C74DE7F60F5C71 /* Pods_Example_swift.framework in Frameworks */,
+				5DBEA6491EA54FFE00C6116D /* Pods_Example_swift.framework in Frameworks */,
+				81ACF5063840CD8477891C53 /* Pods_Example_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +132,7 @@
 		F6BD11DCA25D9C4B7A5F6FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DBEA6481EA54FFE00C6116D /* Pods_Example_swift.framework */,
 				83E23E7CB9EBD172A1E32A13 /* Pods_Example_swift.framework */,
 			);
 			name = Frameworks;
@@ -169,6 +173,8 @@
 				TargetAttributes = {
 					5DBACF311E7B31C8008CD251 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 737XQCDNU5;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -311,7 +317,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -355,6 +361,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -366,13 +373,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 09CC07961295C6EE32936CE3 /* Pods-Example_swift.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 737XQCDNU5;
 				INFOPLIST_FILE = Example_swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.poynt.Example-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Example_swift/Bridge.h;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -380,13 +390,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB8F1D9157D83A056392FF88 /* Pods-Example_swift.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 737XQCDNU5;
 				INFOPLIST_FILE = Example_swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.poynt.Example-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Example_swift/Bridge.h;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Release;
 		};

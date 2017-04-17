@@ -1,9 +1,9 @@
 {
   "name": "PoyntLib",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "PoyntLib sdk for Poynt Smart terminal",
   "description": "Bugsnag version....PoyntLib is a static library that allows iOS applications to communicate with a Poynt Smart Terminal",
-  "homepage": "http://poytn.net/PoyntLib",
+  "homepage": "http://poynt.net/PoyntLib",
   "license": "MIT",
   "authors": {
     "Eric McConkie": "eric@ericmcconkie.com"
@@ -22,6 +22,9 @@
   ],
   "dependencies": {
     "Bugsnag": [
+
+    ],
+    "OpenSSL-Universal": [
 
     ]
   }

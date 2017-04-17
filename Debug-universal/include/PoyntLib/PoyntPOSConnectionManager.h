@@ -68,9 +68,12 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
  @brief required property for pairing an iOS client with the Poynt terminal
 
  @discussion Poynt terminal requires both a url and pairingCode to establish a connection for passing data.
+ 
+ @note: This property is being deprecated. Setting the pairingCode should happen automatically, as of v.0.0.2
 
  @return string an alpha numeric code for pairing.
  */
+#define DEPRECATED_ATTRIBUTE        __attribute__((deprecated))
 @property(nonatomic,strong) NSString *pairingCode;
 
 /*!
@@ -138,7 +141,25 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
  */
 @property (readwrite,copy) OnError onError;
 
--(void)attemptPairing:(void(^)(bool flag,NSError *err))block;
+/*!
+ @brief this method is idealy used to check the client - terminal pairing status
+ 
+ @discussion After an initial pairing, the client and terminal can remian paired and renew session. (aka, you can power off, etc). While there is a `pairedStatus` property, ping allows for a more real time check of the current status.
+ 
+ @param  block, executed on complete pairing or failed result. flag = boolean value of pairing status. If flag is true, error will be nil
+ 
+ */
+-(void)ping:(void(^)(BOOL isPaired,NSError *err))block;
+
+/*!
+ @brief automatically pair the client application with the Poynt Termainal in a secure exchange
+ 
+ @discussion The SDK will automatically handle the secure exchange and pair the client and device if this call is successful. Upon success/fail the block will execute with the result of the exchange
+ 
+ @param  block, executed on complete pairing or failed result. flag = boolean value of pairing status. If flag is true, error will be nil
+ 
+ */
+-(void)attemptPairing:(void(^)(BOOL flag,NSError *err))block;
 
 /*!
  @brief sends a captured sale request to the Poynt terminal
@@ -175,6 +196,7 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
  @param  string representing the pairing code
 
  */
+#define DEPRECATED_ATTRIBUTE        __attribute__((deprecated))
 -(void)authorizePairing:(NSString *)code;
 /*!
  @brief sends a captured sale request to the Poynt terminal
