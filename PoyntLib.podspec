@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Debug-universal/include/PoyntLib/**/*.h'
   s.vendored_libraries    = 'Debug-universal/libPoyntLib.a'
   s.preserve_paths        = 'Debug-universal/libPoyntLib.a', 'Debug-universal/include/PoyntLib/**/*.h'
-  s.dependency "Bugsnag"
-  s.dependency "OpenSSL-Universal"
+  s.dependency "Bugsnag",'~>5.7.0'
+  s.dependency "OpenSSL-Universal",'~>1.0.1.20'
   
 end
