@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../PoyntLib/PoyntPOSConnectionManager.m"
-            timestampString = "514158651.07617"
+            timestampString = "514238445.650884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "595"
-            endingLineNumber = "595"
+            startingLineNumber = "629"
+            endingLineNumber = "629"
             landmarkName = "-_completePairingWithData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../PoyntLib/PoyntPOSConnectionManager.m"
-            timestampString = "514158683.342216"
+            timestampString = "514238445.650884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "575"
-            endingLineNumber = "575"
+            startingLineNumber = "629"
+            endingLineNumber = "629"
             landmarkName = "-_completePing:code:"
             landmarkType = "7">
          </BreakpointContent>
@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../PoyntLib/PoyntPOSConnectionManager.m"
-            timestampString = "514159029.989079"
+            timestampString = "514238445.650884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "551"
-            endingLineNumber = "551"
+            startingLineNumber = "629"
+            endingLineNumber = "629"
             landmarkName = "-ping:"
             landmarkType = "7">
          </BreakpointContent>
