@@ -141,15 +141,6 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
  */
 @property (readwrite,copy) OnError onError;
 
-/*!
- @brief this method is idealy used to check the client - terminal pairing status
- 
- @discussion After an initial pairing, the client and terminal can remian paired and renew session. (aka, you can power off, etc). While there is a `pairedStatus` property, ping allows for a more real time check of the current status.
- 
- @param  block, executed on complete pairing or failed result. flag = boolean value of pairing status. If flag is true, error will be nil
- 
- */
--(void)ping:(void(^)(BOOL isPaired,NSError *err))block;
 
 /*!
  @brief automatically pair the client application with the Poynt Termainal in a secure exchange
@@ -160,6 +151,15 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
  
  */
 -(void)attemptPairing:(void(^)(BOOL flag,NSError *err))block;
+/*!
+ @brief sends an adjustment request to the Poynt terminal
+ 
+ @discussion This expects a PoyntPaymentObject. Upon terminal response the paymentManager will receive either the onTransactionResponse or onError handler. The payment object must have an amount associated, and optional tipAmount (if a tip is included)
+ 
+ @param  PoyntPaymentObject
+ */
+-(void)authorizeAdjustment:(PoyntPaymentObject*)payment;
+
 
 /*!
  @brief sends a captured sale request to the Poynt terminal
@@ -182,22 +182,25 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
  
  */
 -(void)authorizeJson:(NSString *)json endPoint:(NSString*)endpoint;
+-(void)authorizeJson:(NSString *)json endPoint:(NSString*)endpoint callback:(void(^)(id responseData, NSError *error ))callback;
+
 /*!
  @brief attempts to pair the iOS client with the Poynt terminal
-
+ 
  @discussion An iOS client creates a pair after establishing a correct url and pairing code to make the request. The PoyntTerminalDiscover object can find terminals on the same network, revelaing their ip address, or you can manually address the ip if you already know it. The PoyntLib SDK will try to re-establish a connection with the last set credentials even after application termination. Upon terminal response the paymentManager will receive either the onTransactionResponse or onError handler
-
+ 
  @code
  self.paymentManager.url = @"10.0.1.23:55555";
  self.paymentManager.clientName = @"Happy iPad";
  [self.paymentManager authorizePairing:self.textFieldCode.text];
  @endcode
-
+ 
  @param  string representing the pairing code
-
+ 
  */
 #define DEPRECATED_ATTRIBUTE        __attribute__((deprecated))
 -(void)authorizePairing:(NSString *)code;
+
 /*!
  @brief sends a captured sale request to the Poynt terminal
 
@@ -261,15 +264,15 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
  @param  an object that subscribes to the PoyntTransaction protocol  - transactionId is required
  */
 -(void)authorizeVoidPreSales:(id <PoyntTransaction>)transaction ;
-
 /*!
- @brief sends an adjustment request to the Poynt terminal
+ @brief this method is idealy used to check the client - terminal pairing status
  
- @discussion This expects a PoyntPaymentObject. Upon terminal response the paymentManager will receive either the onTransactionResponse or onError handler. The payment object must have an amount associated, and optional tipAmount (if a tip is included)
+ @discussion After an initial pairing, the client and terminal can remian paired and renew session. (aka, you can power off, etc). While there is a `pairedStatus` property, ping allows for a more real time check of the current status.
  
- @param  PoyntPaymentObject
+ @param  block, executed on complete pairing or failed result. flag = boolean value of pairing status. If flag is true, error will be nil
+ 
  */
--(void)authorizeAdjustment:(PoyntPaymentObject*)payment;
+-(void)ping:(void(^)(BOOL isPaired,NSError *err))block;
 
 -(void)printNormal:(PoyntPrintObject*)data;
 
