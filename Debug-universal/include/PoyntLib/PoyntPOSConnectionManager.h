@@ -176,12 +176,12 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
 /*!
  @brief sends raw json...better know what you're doing
  
- @discussion This expects a valid json object and an action type
+ @discussion This expects a valid json object and an valid endpoint
  
  @param  NSString
  
  */
--(void)authorizeJson:(NSString *)json actionType:(PoyntActionType)actionType;
+-(void)authorizeJson:(NSString *)json endPoint:(NSString*)endpoint;
 /*!
  @brief attempts to pair the iOS client with the Poynt terminal
 
