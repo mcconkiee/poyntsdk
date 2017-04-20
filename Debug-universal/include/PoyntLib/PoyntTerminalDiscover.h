@@ -37,4 +37,10 @@ typedef void(^OnTerminalsFound)(NSArray *terminal) ;
  @description pass an OnTerminalsFound block to get a list of terminals currently known on the network.
  */
 -(void)findTerminals:(OnTerminalsFound)complete;
+
+/**
+ @brief stop the network scan
+ @description call this when done with the discovery process!
+ */
+-(void)stop;
 @end

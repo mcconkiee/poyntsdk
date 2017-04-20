@@ -18,6 +18,16 @@ class ChooseTerminalViewController: UITableViewController{
         super.viewDidLoad()
         self.title = "Looking for terminals..."
 
+//        discovery.findTerminals { (terminals) in
+//            if let terms = terminals as? [PoyntTerminal] {
+//                self.data = terms
+//                self.tableView.reloadData()
+//                self.title = "\(self.data.count) terminals"
+//            }
+//        }
+
+    }
+    @IBAction func onScan(_ sender: AnyObject) {
         discovery.findTerminals { (terminals) in
             if let terms = terminals as? [PoyntTerminal] {
                 self.data = terms
@@ -28,6 +38,7 @@ class ChooseTerminalViewController: UITableViewController{
 
     }
     @IBAction func onCancel(_ sender: AnyObject) {
+        discovery.stop()
         self.performSegue(withIdentifier: "unwindToHome", sender: self)
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,6 +59,8 @@ class ChooseTerminalViewController: UITableViewController{
             self.paymentManager.url = "\(ip):\(port)"
             self.paymentManager.attemptPairing { (done, error) in
                 if(error == nil){
+                    self.discovery.stop()
+                    
                     self.performSegue(withIdentifier: "unwindToHome", sender: self)
                 }else{
                     let alert = UIAlertController(title: "Pairing Problem", message: "There was a problem pairing with \(poyntTerminal)", preferredStyle: .alert)
