@@ -31,6 +31,7 @@ typedef enum {
     AuthorizePartialRefund,
     AuthorizeRefund,
     AuthorizeSales,
+    AuthorizeSettlement,
     AuthorizeVoid,
     AuthorizeVoidPreSales,
     AuthorizeAdjustment,
@@ -246,6 +247,15 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
 
  */
 -(void)authorizeSales:(PoyntPaymentObject *)payment ;
+
+/*!
+ @brief sends a settlement request  to the Poynt terminal
+ 
+ @discussion TBD
+ 
+ 
+ */
+-(void)authorizeSettlement;
 
 /*!
  @brief sends a void request to the Poynt terminals

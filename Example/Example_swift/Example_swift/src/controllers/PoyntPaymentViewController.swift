@@ -304,6 +304,8 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
             ttle = "Partial Refund"
         case AuthorizeAdjustment:
             ttle = "Adjustment"
+        case AuthorizeSettlement:
+            ttle = "Settlement"
         default:
             print("\(#function)\r\nunsupported type ---> \(tpe)")
         }
@@ -354,17 +356,23 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         alert.addAction(UIAlertAction(title: "Adjust Amount/Tip", style: .default, handler: { (action) in
             self.onDoAction(AuthorizeAdjustment)
         }))
+        
+        alert.addAction(UIAlertAction(title: "Settlement", style: .default, handler: { (action) in
+            self.poyntAction(AuthorizeSettlement, transaction: nil)
+        }))
 
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
 
         self.present(alert, animated: true, completion: nil)
     }
 
-    func poyntAction(_ action:PoyntActionType,transaction:AnyObject){
+    func poyntAction(_ action:PoyntActionType,transaction:AnyObject?){
         self.toggleHud(true)
         switch action {
         case AuthorizeSales:
             self.paymentManager.authorizeSales(transaction as! PoyntPaymentObject)
+        case AuthorizeSettlement:
+            self.paymentManager.authorizeSettlement()
         case AuthorizePair:
             self.paymentManager.authorizePairing(self.tfCode.text!);
         case AuthorizePreSales:

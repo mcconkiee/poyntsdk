@@ -28,7 +28,10 @@
  @parameter a collection of PoyntTransactionObject objects attached to this transaction request.
  */
 @property(nonatomic,strong) NSArray *transactions; //PoyntTransactionObject
-
+/**
+ @parameter if successful, will be a value of "COMPLETED" or "SUCCESS"
+ */
+@property(nonatomic,copy) NSString *poyntTransactionId;
 /**
  @parameter dictionary representation of PoyntOrderObject
  @note This is an optional field an often not dependable (ie: not populated)
