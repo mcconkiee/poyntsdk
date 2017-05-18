@@ -8,6 +8,7 @@
 
 Pod::Spec.new do |s|
 <<<<<<< HEAD
+<<<<<<< HEAD
   s.name             = 'PoyntLib'
   s.version          = '0.1.4'
   s.summary          = 'The PoyntLib allows iOS clients to connect and communicate with the Poynt Smart Terminal.'
@@ -16,6 +17,10 @@ Pod::Spec.new do |s|
 
   s.name         = "PoyntLib"
   s.version      = "0.0.2"
+=======
+  s.name         = "PoyntLib"
+  s.version      = "0.0.5"
+>>>>>>> 87945b649af758eaf89c0303ff033770d1d11d2f
   s.summary      = "PoyntLib sdk for Poynt Smart terminal"
   s.description  = <<-DESC
   Bugsnag version....PoyntLib is a static library that allows iOS applications to communicate with a Poynt Smart Terminal

@@ -60,6 +60,7 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
         
 //        self.toggleHud(true)
         self.paymentManager.ping { (isPaired, error) in
@@ -68,6 +69,7 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
             }else{
                 self.performSegue(withIdentifier: Constants.segueDiscovery, sender: nil)
             }
+
         }
     }
 
@@ -163,7 +165,7 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         self.bottomContainer.isHidden = true
 
     }
-    
+
     func toggleHud(_ show:Bool){
         UIView.animate(withDuration: 0.4, animations: { 
             self.spinnerContainer.alpha = (show) ? 1 : 0;
@@ -182,10 +184,10 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         //...because nothing is perfect
         paymentManager.onError = {(error, apiType) -> Void in
             self.toggleHud(false)
-
             //FIXME - error userInfo conversion
             if let ner = error as NSError?{
                 let alert = UIAlertController(title: "Erorr.", message: "There was an error. \(ner.userInfo.description)", preferredStyle: .alert)
+
                 let cancel = UIAlertAction(title: "ok", style: .default, handler:nil)
                 alert.addAction(cancel)
                 self.present(alert, animated: true, completion: nil)
@@ -214,7 +216,9 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
                 var capture: UIAlertAction?
                 if obj.status == "COMPLETED" || obj.status == "SUCCESS"{
                     self.bottomContainer.isHidden = false
+
                     if type == AuthorizePair || type == AuthorizePairWithKey {
+
                         self.dismiss(animated: false, completion: nil)
                         self.btnPair.setTitle("Device is Paired", for: UIControlState())
                         self.btnPair.backgroundColor = UIColor.lightGray
@@ -374,7 +378,9 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         self.present(alert, animated: true, completion: nil)
     }
 
+
     func poyntAction(_ action:PoyntActionType,transaction:AnyObject?){
+
         self.toggleHud(true)
         switch action {
         case AuthorizeSales:
@@ -473,6 +479,7 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         self.present(alert, animated: true, completion: nil)
     }
     
+
     func partialCompletionForTransactionId(_ trnxId:String, actionType: PoyntActionType){
         let alert = UIAlertController(title: "Add Tip?", message: "Enter tip amount, or leave blank if you do not want to add a tip.", preferredStyle: .alert);
         let send = UIAlertAction(title: "Send", style: .default, handler: { (action) in
@@ -533,7 +540,9 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
             let items = ordr.items as? [PoyntOrderItemObject],
             let item  = items[indexPath.row] as PoyntOrderItemObject? {
             self.currentItem = item
+
             self.performSegue(withIdentifier: Constants.segueItemDetails, sender: nil)
+
         }
     }
 

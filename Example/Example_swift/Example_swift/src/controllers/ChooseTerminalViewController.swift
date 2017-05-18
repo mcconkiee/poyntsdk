@@ -38,6 +38,7 @@ class ChooseTerminalViewController: UITableViewController{
 
     }
     @IBAction func onCancel(_ sender: AnyObject) {
+
         discovery.stop()
         self.performSegue(withIdentifier: "unwindToHome", sender: self)
     }
@@ -54,6 +55,7 @@ class ChooseTerminalViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let poyntTerminal = self.data[indexPath.row]
         self.selectedTerminal = poyntTerminal
+
         if let ip = poyntTerminal.ip as String?,
             let port = poyntTerminal.service?.port as Int? {
             self.paymentManager.url = "\(ip):\(port)"
@@ -72,7 +74,7 @@ class ChooseTerminalViewController: UITableViewController{
                 }
             }
         }
-        
+
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
