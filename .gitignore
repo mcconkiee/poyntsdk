@@ -1,0 +1,8 @@
+Example/Example_objc/Pods/
+Example/Example_swift/Pods/
+
+Example/Example_swift/Example_swift.xcworkspace/
+Example/Example_swift/Podfile.lock
+
+Example/Example_objc/Example.xcworkspace/
+Example/Example_objc/Podfile.lock
