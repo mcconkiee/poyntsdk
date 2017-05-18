@@ -104,7 +104,6 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         }
     }
 
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueForItemDetails" {
 
@@ -164,11 +163,13 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         self.bottomContainer.isHidden = true
 
     }
+    
     func toggleHud(_ show:Bool){
         UIView.animate(withDuration: 0.4, animations: { 
             self.spinnerContainer.alpha = (show) ? 1 : 0;
         }) 
     }
+    
     func setupPaymentManager() {
 
         self.paymentManager.clientName = "Ralph"
@@ -360,6 +361,13 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         alert.addAction(UIAlertAction(title: "Settlement", style: .default, handler: { (action) in
             self.poyntAction(AuthorizeSettlement, transaction: nil)
         }))
+        
+        alert.addAction(UIAlertAction(title: "Show Items (2nd Screen)", style: .default, handler: { (action) in
+            self.poyntAction(ShowItems, transaction: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Print Sample", style: .default, handler: { (action) in
+            self.poyntAction(Print, transaction: nil)
+        }))
 
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
 
@@ -393,12 +401,31 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
             self.paymentManager.authorizePartialRefund(transaction as! PoyntPaymentObject)
         case AuthorizeAdjustment:
             self.paymentManager.authorizeAdjustment(transaction as! PoyntPaymentObject)
+        case ShowItems:
+            let sso = PoyntSecondScreenObject()
+            sso.currency = "USD"
+            
+            sso.items = []
+            sso.totalAmount = 0;
+            for  b in 0...3 {
+                let price = 200
+                sso.totalAmount = sso.totalAmount + price
+                let tempItem = PoyntOrderItemObject(sku: "testsku_\(b)", unitPrice: price , quantity: 1)
+                tempItem?.name = "item \(b)"
+                tempItem?.status = "ORDERED"
+                sso.items.append(tempItem)
+            }
+            
+            self.paymentManager.showItems(sso)
+        case Print:
+            let ppo = PoyntPrintObject()
+            ppo.content = "{\"content\":\"Your order #:\n553\n\n\n\n\n\"}"
+            // can also do an orderId = {\"orderId\":\"$orderId\"}
+            self.paymentManager.printNormal(ppo)
         default:
             self.toggleHud(false)
         }
     }
-
-
 
     // MARK: - IBACTIONS
     @IBAction func sendData(_ btn:UIButton){
@@ -446,8 +473,6 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
         self.present(alert, animated: true, completion: nil)
     }
     
-    
-
     func partialCompletionForTransactionId(_ trnxId:String, actionType: PoyntActionType){
         let alert = UIAlertController(title: "Add Tip?", message: "Enter tip amount, or leave blank if you do not want to add a tip.", preferredStyle: .alert);
         let send = UIAlertAction(title: "Send", style: .default, handler: { (action) in

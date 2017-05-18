@@ -162,6 +162,14 @@
  **/
 @property(nonatomic,copy)NSString  *transactionId;
 /**
+ @brief should the payment skip the signature screen on the terminal after processing.
+ 
+ Default is false
+ 
+ @returns boolean
+ **/
+@property(nonatomic)BOOL skipPaymentConfirmationScreen;
+/**
  @brief should the payment skip the receipt screen on the terminal after processing.
  
  Default is false
@@ -169,6 +177,14 @@
  @returns boolean
  **/
 @property(nonatomic)BOOL skipReceiptScreen;
+/**
+ @brief should the payment skip the signature screen on the terminal after processing.
+ 
+ Default is false
+ 
+ @returns boolean
+ **/
+@property(nonatomic)BOOL skipSignatureScreen;
 /**
  @brief the amount being tipped (if any)
  @description If there is a tip, it should be set here (in cents)
