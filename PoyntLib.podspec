@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PoyntLib"
-  s.version      = "0.0.6"
+  s.version      = "0.0.7"
   s.summary      = "PoyntLib sdk for Poynt Smart terminal"                     
   s.homepage     = "http://poynt.net/PoyntLib"  
   s.license      = "MIT"
