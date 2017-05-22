@@ -71,8 +71,13 @@ typedef enum {
  **/
 @property(nonatomic,copy) NSString *name;
 /**
+ @brief Quantity purchased.
+ @description  Note this could be in decimals, e.g. 2.3 Kgs.
+ **/
+@property(nonatomic) float quantity;
+/**
  @brief sku
- @description Sku of the item.
+ @description Sku of the item. 
  **/
 @property(nonatomic,copy) NSString *sku;
 /**
@@ -80,6 +85,11 @@ typedef enum {
  @description this is traditionaly set by the system and is likely 'ORDERED', 'FULFILLED', 'RETURNED'
  **/
 @property(nonatomic,copy) NSString *status;
+/**
+ @brief Total tax amount applied on this group of items (not just 1 unit).
+ @description If not specified, but the taxes array is present the server will automatically sum up the amounts in taxes array and populate this. If not specified and taxes array is empty, this will default to 0.
+ **/
+@property(nonatomic,readonly) NSInteger tax;
 /**
  @brief array of PoyntOrderItemTax objects
  @description like discounts, various taxes may be applied to an item
@@ -94,16 +104,8 @@ typedef enum {
  @brief price per item in cents
  **/
 @property(nonatomic) NSInteger unitPrice;
-/**
- @brief Quantity purchased.
- @description  Note this could be in decimals, e.g. 2.3 Kgs.
- **/
-@property(nonatomic) float quantity;
-/**
- @brief Total tax amount applied on this group of items (not just 1 unit).
- @description If not specified, but the taxes array is present the server will automatically sum up the amounts in taxes array and populate this. If not specified and taxes array is empty, this will default to 0.
- **/
-@property(nonatomic,readonly) NSInteger tax;
+
+
 
 @property(nonatomic) NSInteger discount;
 @property(nonatomic) NSInteger fee;

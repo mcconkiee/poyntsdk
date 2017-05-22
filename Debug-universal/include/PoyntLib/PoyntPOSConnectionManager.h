@@ -70,7 +70,7 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
 
  @discussion Poynt terminal requires both a url and pairingCode to establish a connection for passing data.
  
- @note: This property is being deprecated. Setting the pairingCode should happen automatically, as of v.0.0.2
+ @note: This property is being deprecated. Setting the pairingCode should happen automatically, as of v.0.0.2- See `attemptPairing` method.
 
  @return string an alpha numeric code for pairing.
  */
@@ -144,9 +144,9 @@ typedef void(^OnError)(NSError *error, PoyntActionType type) ;
 
 
 /*!
- @brief automatically pair the client application with the Poynt Termainal in a secure exchange
+ @brief automatically pair the client application with the Poynt Termainal in a secure exchange.
  
- @discussion The SDK will automatically handle the secure exchange and pair the client and device if this call is successful. Upon success/fail the block will execute with the result of the exchange
+ @discussion The SDK will automatically handle the secure exchange and pair the client and device if this call is successful. Upon success/fail the block will execute with the result of the exchange. If successful, future request signing can be handled by the SDK
  
  @param  block, executed on complete pairing or failed result. flag = boolean value of pairing status. If flag is true, error will be nil
  
