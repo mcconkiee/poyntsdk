@@ -378,8 +378,6 @@
  
 
  **/
-@property(nonatomic,copy)NSString *STAN;
-
 @property(nonatomic)NSInteger tipAmount;
 
 /**
