@@ -42,7 +42,7 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
     var mostRecentTransactionId: String = "xxx"
     
     var initialLoad: Bool = true
-
+    @IBOutlet weak var skipSignatureSwitch: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -382,6 +382,9 @@ class PoyntPaymentViewController: UIViewController ,UITableViewDataSource, UITab
     func poyntAction(_ action:PoyntActionType,transaction:AnyObject?){
 
         self.toggleHud(true)
+        if let payment = transaction as? PoyntPaymentObject{
+            payment.skipSignatureScreen = self.skipSignatureSwitch.isOn
+        }
         switch action {
         case AuthorizeSales:
             self.paymentManager.authorizeSales(transaction as! PoyntPaymentObject)
